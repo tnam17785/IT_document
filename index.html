@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thuật Toán & Lập Trình Thi Đấu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(0,255,255,.15),transparent 25%),
+    radial-gradient(circle at 80% 30%,rgba(0,120,255,.12),transparent 25%),
+    radial-gradient(circle at 50% 80%,rgba(0,255,180,.1),transparent 25%);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,255,.05) 1px,transparent 1px);
+    background-size:50px 50px;
+    z-index:-1;
+}
+
+/* Hero */
+.hero{
+    min-height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:#00ffff;
+    text-shadow:0 0 15px #00ffff;
+}
+
+.hero p{
+    margin-top:15px;
+    color:#bdefff;
+    max-width:700px;
+    font-size:1.2rem;
+}
+
+/* Cards */
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    padding-bottom:80px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(10,20,40,.7);
+    border:1px solid rgba(0,255,255,.25);
+    border-radius:20px;
+    padding:25px;
+    backdrop-filter:blur(10px);
+    transition:.4s;
+    box-shadow:0 0 20px rgba(0,255,255,.08);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,255,255,.4);
+}
+
+.card h2{
+    color:#00ffff;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#d8f7ff;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    background:linear-gradient(45deg,#00ffff,#0088ff);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#7eb7c9;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>ALGORITHM HUB</h1>
+    <p>
+        Cổng kiến thức Thuật Toán & Lập Trình Thi Đấu.
+        Khám phá từng chủ đề từ cơ bản đến nâng cao.
+    </p>
+</section>
+
+<div class="container">
+
+    <div class="grid">
+
+        <div class="card">
+            <h2>Giới Thiệu</h2>
+            <p>
+                Ngôn ngữ lập trình, nhập xuất dữ liệu,
+                số học, toán học nền tảng và tài nguyên học tập.
+            </p>
+            <a href="introduction.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Độ Phức Tạp Thuật Toán</h2>
+            <p>
+                Big O, đánh giá hiệu năng, ước lượng thời gian chạy
+                và bài toán tổng đoạn lớn nhất.
+            </p>
+            <a href="time-complexity.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Sắp Xếp & Tìm Kiếm</h2>
+            <p>
+                Sorting, Binary Search, Merge Sort,
+                Bubble Sort và các kỹ thuật tìm kiếm.
+            </p>
+            <a href="sorting.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Cấu Trúc Dữ Liệu</h2>
+            <p>
+                Mảng động, Set, Map, Iterator,
+                Stack, Queue và nhiều cấu trúc khác.
+            </p>
+            <a href="data-structures.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Tìm Kiếm Toàn Bộ</h2>
+            <p>
+                Sinh tập con, hoán vị,
+                Backtracking và Meet In The Middle.
+            </p>
+            <a href="complete-search.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Thuật Toán Tham Lam</h2>
+            <p>
+                Greedy, bài toán đồng xu,
+                lập lịch và tối ưu hóa.
+            </p>
+            <a href="greedy.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Quy Hoạch Động</h2>
+            <p>
+                Dynamic Programming, Knapsack,
+                LIS, Edit Distance, Grid Paths.
+            </p>
+            <a href="dp.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Truy Vấn Dữ Liệu</h2>
+            <p>
+                BIT, Segment Tree,
+                Range Query và tối ưu truy vấn.
+            </p>
+            <a href="range-query.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Thao Tác Bit</h2>
+            <p>
+                Bitmask, phép toán bit,
+                tối ưu hóa và DP Bitmask.
+            </p>
+            <a href="bit.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Thuật Toán Đồ Thị</h2>
+            <p>
+                DFS, BFS, Dijkstra,
+                Floyd, MST và Graph nâng cao.
+            </p>
+            <a href="graph.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Lý Thuyết Số</h2>
+            <p>
+                Số nguyên tố, modulo,
+                tổ hợp, xác suất và ma trận.
+            </p>
+            <a href="number-theory.html" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h2>Chuyên Đề Nâng Cao</h2>
+            <p>
+                Game Theory, String Algorithm,
+                Geometry, Convex Hull và nhiều chủ đề khác.
+            </p>
+            <a href="advanced.html" class="btn">Open</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    Algorithm Hub © 2026
+</footer>
+
+</body>
+</html>
