@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction - Algorithm Hub</title>
+
+<style>
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#050816;
+    color:white;
+}
+
+/* Nền công nghệ */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(0,255,255,.15),transparent 25%),
+    radial-gradient(circle at 80% 30%,rgba(0,100,255,.12),transparent 25%),
+    radial-gradient(circle at 50% 90%,rgba(0,255,200,.1),transparent 30%);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,255,.05) 1px,transparent 1px);
+    background-size:50px 50px;
+    z-index:-1;
+}
+
+/* Header */
+
+header{
+    min-height:50vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+header h1{
+    font-size:4rem;
+    color:#00ffff;
+    text-shadow:0 0 20px #00ffff;
+}
+
+header p{
+    margin-top:15px;
+    color:#cdefff;
+    max-width:800px;
+    line-height:1.8;
+}
+
+/* Menu */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(0,10,30,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(0,255,255,.2);
+}
+
+nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    list-style:none;
+}
+
+nav a{
+    color:#bdfcff;
+    text-decoration:none;
+    padding:15px;
+    display:block;
+}
+
+nav a:hover{
+    color:#00ffff;
+}
+
+/* Section */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    margin:60px 0;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(10,20,40,.65);
+    border:1px solid rgba(0,255,255,.2);
+    backdrop-filter:blur(8px);
+}
+
+.section h2{
+    color:#00ffff;
+    margin-bottom:20px;
+}
+
+.section p{
+    line-height:1.8;
+    color:#d8f7ff;
+}
+
+.section ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.section li{
+    margin:10px 0;
+    color:#d8f7ff;
+}
+
+/* Code */
+
+.code{
+    background:#02111f;
+    border-left:4px solid cyan;
+    padding:15px;
+    margin-top:15px;
+    overflow:auto;
+    font-family:Consolas;
+    color:#80ffff;
+}
+
+/* Button */
+
+.back{
+    text-align:center;
+    margin:50px;
+}
+
+.back a{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#00ffff,#0088ff);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#8abed0;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>INTRODUCTION</h1>
+    <p>
+        Chương mở đầu giúp làm quen với lập trình thi đấu,
+        các ngôn ngữ phổ biến, nhập xuất dữ liệu,
+        toán học cơ bản và những kỹ năng cần thiết trước khi học thuật toán.
+    </p>
+</header>
+
+<nav>
+<ul>
+<li><a href="#lang">Ngôn ngữ</a></li>
+<li><a href="#io">Input / Output</a></li>
+<li><a href="#number">Làm việc với số</a></li>
+<li><a href="#short">Rút gọn code</a></li>
+<li><a href="#math">Toán học</a></li>
+<li><a href="#resource">Tài nguyên</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<section id="lang" class="section">
+<h2>1. Ngôn ngữ lập trình</h2>
+
+<p>
+Ba ngôn ngữ phổ biến nhất trong lập trình thi đấu là:
+</p>
+
+<ul>
+<li>C++ – nhanh nhất, thư viện mạnh.</li>
+<li>Python – cú pháp ngắn gọn, dễ học.</li>
+<li>Java – ổn định và phổ biến.</li>
+</ul>
+
+<p>
+Nếu muốn thi học sinh giỏi Tin hoặc Olympic Tin học,
+C++ gần như là lựa chọn bắt buộc.
+</p>
+
+<div class="code">
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    return 0;
+}
+</div>
+</section>
+
+<section id="io" class="section">
+<h2>2. Input / Output</h2>
+
+<p>
+Mọi chương trình đều phải đọc dữ liệu đầu vào và xuất kết quả.
+Trong C++ thường sử dụng cin và cout.
+</p>
+
+<div class="code">
+int a,b;
+cin >> a >> b;
+
+cout << a+b;
+</div>
+
+<p>
+Để tăng tốc độ nhập xuất:
+</p>
+
+<div class="code">
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+</div>
+
+</section>
+
+<section id="number" class="section">
+<h2>3. Làm việc với số</h2>
+
+<ul>
+<li>int: lưu số khoảng ±2 tỷ.</li>
+<li>long long: lưu số rất lớn tới 10¹⁸.</li>
+<li>double: số thực.</li>
+</ul>
+
+<div class="code">
+long long x = 1000000000000LL;
+</div>
+
+<p>
+Trong các bài toán thuật toán, long long được sử dụng cực kỳ thường xuyên.
+</p>
+
+</section>
+
+<section id="short" class="section">
+<h2>4. Rút gọn code</h2>
+
+<p>
+Lập trình viên thi đấu thường dùng typedef hoặc define
+để viết code nhanh hơn.
+</p>
+
+<div class="code">
+typedef long long ll;
+
+#define PB push_back
+#define F first
+#define S second
+</div>
+
+<p>
+Điều này giúp code ngắn và tiết kiệm thời gian khi thi.
+</p>
+
+</section>
+
+<section id="math" class="section">
+<h2>5. Toán học nền tảng</h2>
+
+<ul>
+<li>Tổng 1 + 2 + ... + n</li>
+<li>Giai thừa n!</li>
+<li>Dãy Fibonacci</li>
+<li>Logarit</li>
+<li>Lý thuyết tập hợp</li>
+<li>Logic mệnh đề</li>
+</ul>
+
+<div class="code">
+1 + 2 + ... + n
+=
+n(n+1)/2
+</div>
+
+<p>
+Toán học là nền tảng quan trọng nhất của thuật toán.
+</p>
+
+</section>
+
+<section id="resource" class="section">
+<h2>6. Tài nguyên học tập</h2>
+
+<ul>
+<li>Codeforces</li>
+<li>AtCoder</li>
+<li>HackerRank</li>
+<li>USACO</li>
+<li>Olympic Tin học</li>
+<li>ICPC</li>
+</ul>
+
+<p>
+Sau khi nắm vững chương này,
+hãy chuyển sang chương Time Complexity để hiểu cách đánh giá tốc độ thuật toán.
+</p>
+
+</section>
+
+<div class="back">
+<a href="index.html">← Quay về trang chủ</a>
+</div>
+
+</div>
+
+<footer>
+Algorithm Hub © 2026
+</footer>
+
+</body>
+</html>
