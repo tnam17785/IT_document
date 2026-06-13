@@ -77,37 +77,39 @@ footer{text-align:center;padding:30px}
 <section class="section" id="bigo">
 <h2>1. Big O</h2>
 <p>Big O mô tả tốc độ tăng thời gian chạy theo kích thước dữ liệu n.</p>
-<div class="code">O(1)
+<div class="code"><pre>
+O(1)
 O(log n)
 O(n)
 O(n log n)
 O(n²)
 O(n³)
 O(2ⁿ)
-O(n!)</div>
+O(n!)</pre></div>
 </section>
 
 <section class="section" id="loop">
 <h2>2. Vòng lặp</h2>
 <div class="code">for(int i=0;i&lt;n;i++) { }</div>
 <p>Độ phức tạp: O(n)</p>
-<div class="code">for(int i=0;i&lt;n;i++)
- for(int j=0;j&lt;n;j++) { }</div>
+<div class="code"><pre>
+for(int i=0;i&lt;n;i++)
+   for(int j=0;j&lt;n;j++) { }</pre></div>
 <p>Độ phức tạp: O(n²)</p>
 </section>
 
 <section class="section" id="rec">
 <h2>3. Đệ quy</h2>
-<div class="code">void f(int n){
- if(n==1) return;
- f(n-1);
-}</div>
+<div class="code"><pre>void f(int n){
+   if(n==1) return;
+   f(n-1);
+}</pre></div>
 <p>O(n)</p>
-<div class="code">void g(int n){
- if(n==1) return;
- g(n-1);
- g(n-1);
-}</div>
+<div class="code"><pre>void g(int n){
+   if(n==1) return;
+   g(n-1);
+   g(n-1);
+}</pre></div>
 <p>O(2ⁿ)</p>
 </section>
 
@@ -126,23 +128,23 @@ O(n!)</div>
 
 <section class="section" id="estimate">
 <h2>5. Ước lượng nhanh</h2>
-<div class="code">
+<div class="code"><pre>
 n ≤ 20      -> O(2ⁿ)
 n ≤ 500     -> O(n³)
 n ≤ 5000    -> O(n²)
 n ≤ 10⁶     -> O(n log n)
-</div>
+</pre></div>
 </section>
 
 <section class="section" id="kadane">
 <h2>6. Maximum Subarray Sum - Kadane</h2>
-<div class="code">
+<div class="code"><pre>
 int best=0,sum=0;
 for(int i=0;i<n;i++){
-    sum=max(a[i],sum+a[i]);
-    best=max(best,sum);
+   sum=max(a[i],sum+a[i]);
+   best=max(best,sum);
 }
-</div>
+</pre></div>
 <p>Kadane giải bài toán tổng đoạn con lớn nhất với O(n).</p>
 </section>
 
