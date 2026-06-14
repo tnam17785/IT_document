@@ -3,357 +3,279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introduction - Algorithm Hub</title>
+<title>Introduction - Competitive Programming</title>
 
 <style>
-
-html{
-    scroll-behavior:smooth;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:'Segoe UI',sans-serif;
-    background:#050816;
-    color:white;
+    margin:0;
+    font-family:Segoe UI, Arial;
+    background:#0b0f14;
+    color:#d6e2f0;
 }
 
-/* Nền công nghệ */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(0,255,255,.15),transparent 25%),
-    radial-gradient(circle at 80% 30%,rgba(0,100,255,.12),transparent 25%),
-    radial-gradient(circle at 50% 90%,rgba(0,255,200,.1),transparent 30%);
-    z-index:-2;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    linear-gradient(rgba(0,255,255,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,255,255,.05) 1px,transparent 1px);
-    background-size:50px 50px;
-    z-index:-1;
-}
-
-/* Header */
-
-header{
-    min-height:50vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+.header{
+    padding:30px;
     text-align:center;
-    padding:40px;
+    background:linear-gradient(90deg,#0f172a,#083344);
+    border-bottom:1px solid #1f2a3a;
 }
 
-header h1{
-    font-size:4rem;
-    color:#00ffff;
-    text-shadow:0 0 20px #00ffff;
+.header h1{
+    margin:0;
+    color:#4cc9f0;
 }
-
-header p{
-    margin-top:15px;
-    color:#cdefff;
-    max-width:800px;
-    line-height:1.8;
-}
-
-/* Menu */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(0,10,30,.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(0,255,255,.2);
-}
-
-nav ul{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    list-style:none;
-}
-
-nav a{
-    color:#bdfcff;
-    text-decoration:none;
-    padding:15px;
-    display:block;
-}
-
-nav a:hover{
-    color:#00ffff;
-}
-
-/* Section */
 
 .container{
-    width:90%;
-    max-width:1200px;
+    max-width:1000px;
     margin:auto;
+    padding:20px;
 }
 
-.section{
-    margin:60px 0;
-    padding:30px;
-    border-radius:20px;
-    background:rgba(10,20,40,.65);
-    border:1px solid rgba(0,255,255,.2);
-    backdrop-filter:blur(8px);
-}
-
-.section h2{
-    color:#00ffff;
+.card{
+    background:#111826;
+    border:1px solid #1f2a3a;
+    padding:20px;
     margin-bottom:20px;
+    border-radius:12px;
 }
 
-.section p{
-    line-height:1.8;
-    color:#d8f7ff;
+h2{color:#4cc9f0}
+h3{color:#90e0ef}
+p,li{color:#cbd5e1;line-height:1.6}
+
+.note{
+    border-left:4px solid #4cc9f0;
+    padding:10px;
+    background:#0f172a;
+    margin-top:10px;
 }
-
-.section ul{
-    margin-top:15px;
-    padding-left:20px;
-}
-
-.section li{
-    margin:10px 0;
-    color:#d8f7ff;
-}
-
-/* Code */
-
-.code{
-    background:#02111f;
-    border-left:4px solid cyan;
-    padding:15px;
-    margin-top:15px;
-    overflow:auto;
-    font-family:Consolas;
-    color:#80ffff;
-}
-
-/* Button */
-
-.back{
-    text-align:center;
-    margin:50px;
-}
-
-.back a{
-    display:inline-block;
-    padding:12px 25px;
-    border-radius:30px;
-    background:linear-gradient(45deg,#00ffff,#0088ff);
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#8abed0;
-}
-
 </style>
+
 </head>
+
 <body>
 
-<header>
-    <h1>INTRODUCTION</h1>
-    <p>
-        Chương mở đầu giúp làm quen với lập trình thi đấu,
-        các ngôn ngữ phổ biến, nhập xuất dữ liệu,
-        toán học cơ bản và những kỹ năng cần thiết trước khi học thuật toán.
-    </p>
-</header>
-
-<nav>
-<ul>
-<li><a href="#lang">Ngôn ngữ</a></li>
-<li><a href="#io">Input / Output</a></li>
-<li><a href="#number">Làm việc với số</a></li>
-<li><a href="#short">Rút gọn code</a></li>
-<li><a href="#math">Toán học</a></li>
-<li><a href="#resource">Tài nguyên</a></li>
-</ul>
-</nav>
+<div class="header">
+    <h1>CHAPTER 1 - INTRODUCTION</h1>
+    <p>Competitive Programming Handbook (diễn giải đầy đủ)</p>
+</div>
 
 <div class="container">
 
-<section id="lang" class="section">
-<h2>1. Ngôn ngữ lập trình</h2>
+<!-- 1 -->
+<div class="card">
+<h2>1. Competitive Programming là gì?</h2>
 
 <p>
-Ba ngôn ngữ phổ biến nhất trong lập trình thi đấu là:
+Competitive Programming là sự kết hợp giữa <b>thiết kế thuật toán</b> và <b>lập trình thực thi</b>.
+Mục tiêu là giải bài toán nhanh, đúng và tối ưu.
+</p>
+
+<p>
+Một lời giải tốt không chỉ cần đúng mà còn phải chạy trong thời gian giới hạn.
+</p>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<h2>2. Hai kỹ năng quan trọng</h2>
+
+<h3>🔹 Thiết kế thuật toán</h3>
+<ul>
+<li>Phân tích bài toán</li>
+<li>Tìm hướng giải hiệu quả</li>
+<li>Áp dụng tư duy toán + logic</li>
+</ul>
+
+<h3>🔹 Cài đặt thuật toán</h3>
+<ul>
+<li>Code đúng logic</li>
+<li>Không lỗi runtime</li>
+<li>Tối ưu thời gian chạy</li>
+</ul>
+
+</div>
+
+<!-- 3 -->
+<div class="card">
+<h2>3. Ngôn ngữ lập trình</h2>
+
+<p>
+Ba ngôn ngữ phổ biến nhất trong thi đấu:
 </p>
 
 <ul>
-<li>C++ – nhanh nhất, thư viện mạnh.</li>
-<li>Python – cú pháp ngắn gọn, dễ học.</li>
-<li>Java – ổn định và phổ biến.</li>
+<li><b>C++</b>: nhanh nhất, nhiều thư viện → phổ biến nhất</li>
+<li><b>Python</b>: dễ viết, mạnh xử lý số lớn</li>
+<li><b>Java</b>: ổn định, dùng ít hơn</li>
 </ul>
 
-<p>
-Nếu muốn thi học sinh giỏi Tin hoặc Olympic Tin học,
-C++ gần như là lựa chọn bắt buộc.
-</p>
+<div class="note">
+C++ gần như là tiêu chuẩn vì tốc độ và STL rất mạnh.
+</div>
+</div>
 
-<div class="code">
+<!-- 4 -->
+<div class="card">
+<h2>4. Template C++ thi đấu</h2>
+
+<div class="note">
 <pre>
 #include &lt;bits/stdc++.h&gt;
 using namespace std;
 
 int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    // code
+
     return 0;
 }
 </pre>
 </div>
-</section>
-
-<section id="io" class="section">
-<h2>2. Input / Output</h2>
 
 <p>
-Mọi chương trình đều phải đọc dữ liệu đầu vào và xuất kết quả.
-Trong C++ thường sử dụng cin và cout.
+Template này giúp code nhanh và tối ưu input/output.
 </p>
 
-<div class="code">
-<pre>
-int a,b;
-cin >> a >> b;
-
-cout << a+b;
-</pre>
 </div>
 
-<p>
-Để tăng tốc độ nhập xuất:
-</p>
+<!-- 5 -->
+<div class="card">
+<h2>5. Input / Output</h2>
 
-<div class="code">
+<ul>
+<li>Dữ liệu nhập qua cin, xuất qua cout</li>
+<li>Dữ liệu cách nhau bằng space hoặc newline</li>
+<li>Có thể đọc đến khi hết input</li>
+</ul>
+
+<div class="note">
+Tối ưu tốc độ:
 <pre>
 ios::sync_with_stdio(false);
 cin.tie(nullptr);
 </pre>
 </div>
 
-</section>
-
-<section id="number" class="section">
-<h2>3. Làm việc với số</h2>
-
-<ul>
-<li>int: lưu số khoảng ±2 tỷ.</li>
-<li>long long: lưu số rất lớn tới 10¹⁸.</li>
-<li>double: số thực.</li>
-</ul>
-
-<div class="code">
-long long x = 1000000000000LL;
 </div>
 
+<!-- 6 -->
+<div class="card">
+<h2>6. Kiểu dữ liệu số</h2>
+
+<h3>🔹 Integer</h3>
+<ul>
+<li>int: ~2e9</li>
+<li>long long: ~9e18</li>
+</ul>
+
+<div class="note">
+Sai lầm phổ biến: nhân int gây tràn số dù gán vào long long.
+</div>
+
+<h3>🔹 Số thực</h3>
+<ul>
+<li>double: phổ biến</li>
+<li>long double: chính xác hơn</li>
+</ul>
+
 <p>
-Trong các bài toán thuật toán, long long được sử dụng cực kỳ thường xuyên.
+So sánh số thực không dùng == mà dùng sai số epsilon.
 </p>
 
-</section>
+</div>
 
-<section id="short" class="section">
-<h2>4. Rút gọn code</h2>
+<!-- 7 -->
+<div class="card">
+<h2>7. Modulo (chia dư)</h2>
 
 <p>
-Lập trình viên thi đấu thường dùng typedef hoặc define
-để viết code nhanh hơn.
+Trong lập trình thi đấu, kết quả thường rất lớn nên ta lấy modulo (ví dụ 1e9+7).
 </p>
 
-<div class="code">
+<ul>
+<li>(a + b) % m</li>
+<li>(a * b) % m</li>
+</ul>
+
+<p>
+Ta luôn có thể lấy mod sau mỗi phép tính để tránh tràn số.
+</p>
+
+</div>
+
+<!-- 8 -->
+<div class="card">
+<h2>8. Tối giản code</h2>
+
+<p>
+Trong thi đấu, code ngắn giúp viết nhanh hơn.
+</p>
+
+<ul>
+<li>typedef / using để rút gọn kiểu dữ liệu</li>
+<li>macro để viết nhanh vòng lặp</li>
+</ul>
+
+<div class="note">
+Ví dụ:
 <pre>
-typedef long long ll;
-
-#define PB push_back
 #define F first
 #define S second
+#define PB push_back
+#define MP make_pair
 </pre>
 </div>
 
-<p>
-Điều này giúp code ngắn và tiết kiệm thời gian khi thi.
-</p>
-
-</section>
-
-<section id="math" class="section">
-<h2>5. Toán học nền tảng</h2>
-
-<ul>
-<li>Tổng 1 + 2 + ... + n</li>
-<li>Giai thừa n!</li>
-<li>Dãy Fibonacci</li>
-<li>Logarit</li>
-<li>Lý thuyết tập hợp</li>
-<li>Logic mệnh đề</li>
-</ul>
-
-<div class="code">
-1 + 2 + ... + n
-=
-n(n+1)/2
 </div>
 
+<!-- 9 -->
+<div class="card">
+<h2>9. Tư duy toán học</h2>
+
 <p>
-Toán học là nền tảng quan trọng nhất của thuật toán.
+Competitive Programming yêu cầu nền tảng toán học tốt.
 </p>
 
-</section>
+<ul>
+<li>Công thức tổng</li>
+<li>Cấp số cộng / nhân</li>
+<li>Logarithm</li>
+<li>Logic & tập hợp</li>
+</ul>
 
-<section id="resource" class="section">
-<h2>6. Tài nguyên học tập</h2>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<h2>10. Môi trường thi đấu</h2>
 
 <ul>
-<li>Codeforces</li>
-<li>AtCoder</li>
-<li>HackerRank</li>
-<li>USACO</li>
-<li>Olympic Tin học</li>
-<li>ICPC</li>
+<li>IOI: học sinh THPT</li>
+<li>ICPC: sinh viên</li>
+<li>Online contest: Codeforces, AtCoder...</li>
 </ul>
 
 <p>
-Sau khi nắm vững chương này,
-hãy chuyển sang chương Time Complexity để hiểu cách đánh giá tốc độ thuật toán.
+Các cuộc thi giúp rèn luyện tư duy thuật toán và tốc độ code.
 </p>
 
-</section>
+</div>
 
-<div class="back">
-<a href="index.html">← Quay về trang chủ</a>
+<!-- END -->
+<div class="card">
+<h2>Kết luận</h2>
+
+<p>
+Competitive Programming = <b>Thuật toán + Tư duy + Tốc độ code</b>.
+Muốn giỏi cần luyện nhiều bài và hiểu bản chất thuật toán.
+</p>
+
 </div>
 
 </div>
-
-<footer>
-Algorithm Hub © 2026
-</footer>
 
 </body>
 </html>
