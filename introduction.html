@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction - Competitive Programming</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI, Arial;
+    background:#0b0f14;
+    color:#d6e2f0;
+}
+
+.header{
+    padding:30px;
+    text-align:center;
+    background:linear-gradient(90deg,#0f172a,#083344);
+    border-bottom:1px solid #1f2a3a;
+}
+
+.header h1{
+    margin:0;
+    color:#4cc9f0;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:#111826;
+    border:1px solid #1f2a3a;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:12px;
+}
+
+h2{color:#4cc9f0}
+h3{color:#90e0ef}
+p,li{color:#cbd5e1;line-height:1.6}
+
+.note{
+    border-left:4px solid #4cc9f0;
+    padding:10px;
+    background:#0f172a;
+    margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>CHAPTER 1 - INTRODUCTION</h1>
+    <p>Competitive Programming Handbook (diễn giải đầy đủ)</p>
+</div>
+
+<div class="container">
+
+<!-- 1 -->
+<div class="card">
+<h2>1. Competitive Programming là gì?</h2>
+
+<p>
+Competitive Programming là sự kết hợp giữa <b>thiết kế thuật toán</b> và <b>lập trình thực thi</b>.
+Mục tiêu là giải bài toán nhanh, đúng và tối ưu.
+</p>
+
+<p>
+Một lời giải tốt không chỉ cần đúng mà còn phải chạy trong thời gian giới hạn.
+</p>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<h2>2. Hai kỹ năng quan trọng</h2>
+
+<h3>🔹 Thiết kế thuật toán</h3>
+<ul>
+<li>Phân tích bài toán</li>
+<li>Tìm hướng giải hiệu quả</li>
+<li>Áp dụng tư duy toán + logic</li>
+</ul>
+
+<h3>🔹 Cài đặt thuật toán</h3>
+<ul>
+<li>Code đúng logic</li>
+<li>Không lỗi runtime</li>
+<li>Tối ưu thời gian chạy</li>
+</ul>
+
+</div>
+
+<!-- 3 -->
+<div class="card">
+<h2>3. Ngôn ngữ lập trình</h2>
+
+<p>
+Ba ngôn ngữ phổ biến nhất trong thi đấu:
+</p>
+
+<ul>
+<li><b>C++</b>: nhanh nhất, nhiều thư viện → phổ biến nhất</li>
+<li><b>Python</b>: dễ viết, mạnh xử lý số lớn</li>
+<li><b>Java</b>: ổn định, dùng ít hơn</li>
+</ul>
+
+<div class="note">
+C++ gần như là tiêu chuẩn vì tốc độ và STL rất mạnh.
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<h2>4. Template C++ thi đấu</h2>
+
+<div class="note">
+<pre>
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    // code
+
+    return 0;
+}
+</pre>
+</div>
+
+<p>
+Template này giúp code nhanh và tối ưu input/output.
+</p>
+
+</div>
+
+<!-- 5 -->
+<div class="card">
+<h2>5. Input / Output</h2>
+
+<ul>
+<li>Dữ liệu nhập qua cin, xuất qua cout</li>
+<li>Dữ liệu cách nhau bằng space hoặc newline</li>
+<li>Có thể đọc đến khi hết input</li>
+</ul>
+
+<div class="note">
+Tối ưu tốc độ:
+<pre>
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+</pre>
+</div>
+
+</div>
+
+<!-- 6 -->
+<div class="card">
+<h2>6. Kiểu dữ liệu số</h2>
+
+<h3>🔹 Integer</h3>
+<ul>
+<li>int: ~2e9</li>
+<li>long long: ~9e18</li>
+</ul>
+
+<div class="note">
+Sai lầm phổ biến: nhân int gây tràn số dù gán vào long long.
+</div>
+
+<h3>🔹 Số thực</h3>
+<ul>
+<li>double: phổ biến</li>
+<li>long double: chính xác hơn</li>
+</ul>
+
+<p>
+So sánh số thực không dùng == mà dùng sai số epsilon.
+</p>
+
+</div>
+
+<!-- 7 -->
+<div class="card">
+<h2>7. Modulo (chia dư)</h2>
+
+<p>
+Trong lập trình thi đấu, kết quả thường rất lớn nên ta lấy modulo (ví dụ 1e9+7).
+</p>
+
+<ul>
+<li>(a + b) % m</li>
+<li>(a * b) % m</li>
+</ul>
+
+<p>
+Ta luôn có thể lấy mod sau mỗi phép tính để tránh tràn số.
+</p>
+
+</div>
+
+<!-- 8 -->
+<div class="card">
+<h2>8. Tối giản code</h2>
+
+<p>
+Trong thi đấu, code ngắn giúp viết nhanh hơn.
+</p>
+
+<ul>
+<li>typedef / using để rút gọn kiểu dữ liệu</li>
+<li>macro để viết nhanh vòng lặp</li>
+</ul>
+
+<div class="note">
+Ví dụ:
+<pre>
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+</pre>
+</div>
+
+</div>
+
+<!-- 9 -->
+<div class="card">
+<h2>9. Tư duy toán học</h2>
+
+<p>
+Competitive Programming yêu cầu nền tảng toán học tốt.
+</p>
+
+<ul>
+<li>Công thức tổng</li>
+<li>Cấp số cộng / nhân</li>
+<li>Logarithm</li>
+<li>Logic & tập hợp</li>
+</ul>
+
+</div>
+
+<!-- 10 -->
+<div class="card">
+<h2>10. Môi trường thi đấu</h2>
+
+<ul>
+<li><a href="https://ioinformatics.org/">IOI</a>: học sinh THPT</li>
+<li><a href="https://icpc.global/">ICPC</a>: sinh viên</li>
+<li>Online contest: <a href="https://codeforces.com/">Codeforces</a>, <a href="https://atcoder.jp/">AtCoder</a>...</li>
+</ul>
+
+<p>
+Các cuộc thi giúp rèn luyện tư duy thuật toán và tốc độ code.
+</p>
+
+</div>
+
+<!-- END -->
+<div class="card">
+<h2>Kết luận</h2>
+
+<p>
+Competitive Programming = <b>Thuật toán + Tư duy + Tốc độ code</b>.
+Muốn giỏi cần luyện nhiều bài và hiểu bản chất thuật toán.
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
