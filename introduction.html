@@ -6,6 +6,9 @@
 <title>Introduction - Competitive Programming</title>
 
 <style>
+*{
+    box-sizing:border-box;
+}
 body{
     margin:0;
     font-family:Segoe UI, Arial;
@@ -59,7 +62,50 @@ a:link, a:visited {
 a:hover {
     color: #80bfff; /* Màu sáng hơn một chút khi hover */
 }
+/* Responsive cho điện thoại */
+pre{
+    overflow-x:auto;
+}
 
+@media (max-width:768px){
+
+    .container{
+        padding:10px;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .header{
+        padding:20px 10px;
+    }
+
+    .header h1{
+        font-size:1.8rem;
+    }
+
+    .header p{
+        font-size:0.95rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    h3{
+        font-size:1.1rem;
+    }
+
+    p,
+    li{
+        font-size:0.95rem;
+    }
+
+    pre{
+        font-size:13px;
+    }
+}
 </style>
 
 </head>
