@@ -31,20 +31,13 @@
             <div class="note">
                 Ví dụ: O(n), O(n²), O(log n), O(n log n), O(2ⁿ)
             </div>
-            <p>
-                Nhờ phân tích độ phức tạp, ta có thể đánh giá một ý tưởng có khả thi hay
-                không trước khi bắt tay vào viết code.
-            </p>
+            <p>Nhờ phân tích độ phức tạp, ta có thể đánh giá một ý tưởng có khả thi hay không trước khi bắt tay vào viết code.</p>
         </div>
         <div class="card">
             <h2>2. Quy tắc tính độ phức tạp</h2>
             <ul>
-                <li>
-                    <p>Để xác định độ phức tạp của một thuật toán, ta phân tích những phần tiêu tốn thời gian nhất của chương trình.</p>
-                </li>
-                <li>
-                    <p>Trong đa số trường hợp, các vòng lặp và lời gọi đệ quy quyết định phần lớn thời gian thực thi.</p>
-                </li>
+                <li><p>Để xác định độ phức tạp của một thuật toán, ta phân tích những phần tiêu tốn thời gian nhất của chương trình.</p></li>
+                <li><p>Trong đa số trường hợp, các vòng lặp và lời gọi đệ quy quyết định phần lớn thời gian thực thi.</p></li>
             </ul>
             <div class="note">
                 Ký hiệu n thường được dùng để biểu diễn kích thước dữ liệu đầu vào.
@@ -56,9 +49,9 @@
             <h3>🔹Một vòng lặp</h3>
             <div class="note">
                 <pre>
-                    for(int i=0; i&lt;n; i++){
-                    // code
-                    }
+for(int i=0; i&lt;n; i++){
+// code
+}
                 </pre>
             </div>
             <p>Khối lệnh bên trong được thực hiện n lần.</p>
@@ -68,11 +61,11 @@
             <h3>🔹Hai vòng lặp lồng nhau</h3>
             <div class="note">
                 <pre>
-                    for(int i=0; i&lt;n; i++){
-                        for(int j=0; j&lt;n; j++){
-                             // code
-                        }
-                    }
+for(int i=0; i&lt;n; i++){
+    for(int j=0; j&lt;n; j++){
+        // code
+    }
+}
                 </pre>
             </div>
             <p>Vòng trong chạy n lần với mỗi lần của vòng ngoài.</p>
@@ -92,13 +85,13 @@
             <ul>
                 <div class="note">
                     <pre>
-                        for(int i=0; i&lt;3*n; i++)
+for(int i=0; i&lt;3*n; i++)
                     </pre>
                 </div>
                 <li>Chạy 3n lần nhưng vẫn là O(n)</li>
                 <div class="note">
                     <pre>
-                        for(int i=0; i&lt;n+5; i++)
+for(int i=0; i&lt;n+5; i++)
                     </pre>
                 </div>
                 <li>Chạy n+5 lần nhưng vẫn là O(n)</li>
@@ -129,11 +122,11 @@
             <h2>6. Nhiều biến đầu vào</h2>
             <div class="note">
                 <pre>
-                    for(int i=0; i&lt;n; i++){
-                        for(int j=0; j&lt;m; j++){
-                            // code
-                        }
-                    }
+for(int i=0; i&lt;n; i++){
+    for(int j=0; j&lt;m; j++){
+        // code
+    }
+}
                 </pre>
             </div>
             <ul>
@@ -153,10 +146,10 @@
             <h3>🔹Ví dụ 1</h3>
             <div class="note">
                 <pre>
-                    void f(int n){
-                        if(n==1) return;
-                        f(n-1);
-                    }
+void f(int n){
+    if(n==1) return;
+    f(n-1);
+}
                 </pre>
             </div>
             <p>Hàm chỉ tạo ra một lời gọi mới mỗi lần thực hiện.</p>
@@ -167,11 +160,11 @@
             <h3>🔹Ví dụ 2</h3>
             <div class="note">
                 <pre>
-                    void g(int n){
-                        if(n==1) return;
-                        g(n-1);
-                        g(n-1);
-                    }
+void g(int n){
+    if(n==1) return;
+    g(n-1);
+    g(n-1);
+}
                 </pre>
             </div>
             <p>Mỗi lần gọi sinh ra hai lần gọi mới.</p>
@@ -189,7 +182,7 @@
             <p>Thời gian thực hiện không phụ thuộc kích thước dữ liệu.</p>
             <div class="note">
                 <pre>
-                    int sum = a + b;
+int sum = a + b;
                 </pre>
             </div>
             <h3>🔹O(log n) - Logarithmic</h3>
@@ -275,13 +268,13 @@
                 <p>Ví dụ:</p>
                 <div class="note">
                     <pre>
-                        -1  2  4  -3  5  2  -5  2
+-1  2  4  -3  5  2  -5  2
                     </pre>
                 </div>
                 <p>Đoạn con có tổng lớn nhất là:</p>
                 <div class="note">
                     <pre>
-                        2  4  -3  5  2
+2  4  -3  5  2
                     </pre>
                 </div>
                 <p>Tổng = 10</p>
@@ -294,15 +287,15 @@
                 <li><p>Với mỗi đoạn con, ta tính tổng rồi cập nhật kết quả lớn nhất.</p></li>
                 <div class="note">
                     <pre>
-                        for(int a=0; a&lt;n; a++){
-                            for(int b=a; b&lt;n; b++){
-                            int sum=0;
-                                for(int k=a; k&lt;=b; k++){
-                                sum += array[k];
-                                }
-                                best = max(best, sum);
-                            }
-                        }
+for(int a=0; a&lt;n; a++){
+    for(int b=a; b&lt;n; b++){
+    int sum=0;
+        for(int k=a; k&lt;=b; k++){
+        sum += array[k];
+        }
+        best = max(best, sum);
+    }
+}
                     </pre>
                 </div>
                 <li><p>Hai vòng lặp đầu xác định đoạn con.</p></li>
@@ -318,13 +311,13 @@
             </ul>
             <div class="note">
                 <pre>
-                    for(int a=0; a&lt;n; a++){
-                        int sum=0;
-                        for(int b=a; b&lt;n; b++){
-                            sum += array[b];
-                            best = max(best, sum);
-                        }
-                    }
+for(int a=0; a&lt;n; a++){
+    int sum=0;
+    for(int b=a; b&lt;n; b++){
+        sum += array[b];
+        best = max(best, sum);
+    }
+}
                 </pre>
             </div>
             <p>Mỗi lần b tăng lên, tổng mới được tính từ tổng cũ <b>(O(n²))</b></p>
@@ -336,12 +329,12 @@
             <p><u>Ý tưởng:</u>tại mỗi vị trí, lưu tổng lớn nhất của đoạn con kết thúc tại vị trí đó.</p>
             <div class="note">
                 <pre>
-                    int best=0;
-                    int sum=0;
-                    for(int i=0; i&lt;n; i++){
-                        sum = max(array[i], sum+array[i]);
-                        best = max(best, sum);
-                    }
+int best=0;
+int sum=0;
+for(int i=0; i&lt;n; i++){
+    sum = max(array[i], sum+array[i]);
+    best = max(best, sum);
+}
                 </pre>
             </div>
             <p>Với mỗi phần tử, ta có hai lựa chọn:</p>
