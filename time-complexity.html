@@ -74,7 +74,12 @@ p,li{color:#cbd5e1;line-height:1.6}
 .table{
     min-width:700px;
 }
-@media (max-width: 768px){
+
+pre{
+    overflow-x:auto;
+}
+
+@media (max-width:768px){
 
     .container{
         padding:10px;
@@ -84,13 +89,28 @@ p,li{color:#cbd5e1;line-height:1.6}
         padding:15px;
     }
 
+    .header{
+        padding:20px 10px;
+    }
+
+    .header h1{
+        font-size:1.8rem;
+    }
+
     h2{
-        font-size:28px;
+        font-size:1.4rem;
+    }
+
+    h3{
+        font-size:1.1rem;
+    }
+
+    p, li{
+        font-size:0.95rem;
     }
 
     pre{
         font-size:13px;
-        overflow-x:auto;
     }
 }
 </style>
