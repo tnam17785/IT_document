@@ -66,6 +66,33 @@ p,li{color:#cbd5e1;line-height:1.6}
     background:#0f172a;
     color:#4cc9f0;
 }
+.table-wrapper{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+.table{
+    min-width:700px;
+}
+@media (max-width: 768px){
+
+    .container{
+        padding:10px;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    pre{
+        font-size:13px;
+        overflow-x:auto;
+    }
+}
 </style>
 
 </head>
@@ -423,7 +450,7 @@ int sum = a + b;
         <li>Trước khi code, ta nên ước lượng xem thuật toán có đủ nhanh hay không.</li><br>
         <li>Máy tính hiện đại có thể thực hiện hàng trăm triệu phép tính mỗi giây.</li>
     </ul></p>
-
+<div class="table-wrapper">
     <table class="table">
         <tr>
             <th>Kích thước dữ liệu</th>
@@ -460,7 +487,7 @@ int sum = a + b;
             <td>O(log n) hoặc O(1)</td>
         </tr>
     </table>
-
+</div>
     <p>
         Bảng trên chỉ mang tính ước lượng nhưng rất hữu ích khi chọn hướng giải.
     </p>
@@ -630,7 +657,7 @@ for(int i=0;i&lt;n;i++){
         Khi kích thước dữ liệu tăng lên,
         sự khác biệt giữa các thuật toán trở nên rất rõ ràng.
     </p>
-
+<div class="table-wrapper">
     <table class="table">
 
         <tr>
@@ -676,7 +703,7 @@ for(int i=0;i&lt;n;i++){
         </tr>
 
     </table>
-
+</div>
     <p>
         Chỉ cần giảm từ O(n²) xuống O(n),
         tốc độ thực tế có thể tăng hàng nghìn lần.
