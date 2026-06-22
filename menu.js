@@ -1,25 +1,42 @@
 (() => {
-  const btn = document.getElementById("menuBtn");
-  const menu = document.getElementById("sideMenu");
+  "use strict";
+
+  const menuBtn = document.getElementById("menuBtn");
+  const sideMenu = document.getElementById("sideMenu");
   const overlay = document.getElementById("overlay");
 
-  if (!btn || !menu || !overlay) return;
+  if (!menuBtn || !sideMenu || !overlay) return;
 
   const openMenu = () => {
-    menu.classList.add("open");
+    sideMenu.classList.add("open");
     overlay.classList.add("show");
+    document.body.style.overflow = "hidden"; // khóa scroll
   };
 
   const closeMenu = () => {
-    menu.classList.remove("open");
+    sideMenu.classList.remove("open");
     overlay.classList.remove("show");
+    document.body.style.overflow = ""; // mở lại scroll
   };
 
-  btn.addEventListener("click", openMenu);
+  const toggleMenu = () => {
+    if (sideMenu.classList.contains("open")) closeMenu();
+    else openMenu();
+  };
+
+  // click nút
+  menuBtn.addEventListener("click", toggleMenu);
+
+  // click nền mờ
   overlay.addEventListener("click", closeMenu);
 
-  // click link thì tự tắt menu luôn (cho mượt)
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", closeMenu);
+  // click link thì đóng menu
+  sideMenu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // ESC để thoát (xịn hơn)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
   });
 })();
