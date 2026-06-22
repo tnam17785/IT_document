@@ -1,41 +1,35 @@
 (() => {
   "use strict";
 
-  const menuBtn = document.getElementById("menuBtn");
-  const sideMenu = document.getElementById("sideMenu");
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("sideMenu");
   const overlay = document.getElementById("overlay");
 
-  if (!menuBtn || !sideMenu || !overlay) return;
+  if (!btn || !menu || !overlay) return;
 
   const openMenu = () => {
-    sideMenu.classList.add("open");
+    menu.classList.add("open");
     overlay.classList.add("show");
-    document.body.style.overflow = "hidden"; // khóa scroll
+    document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
-    sideMenu.classList.remove("open");
+    menu.classList.remove("open");
     overlay.classList.remove("show");
-    document.body.style.overflow = ""; // mở lại scroll
+    document.body.style.overflow = "";
   };
 
   const toggleMenu = () => {
-    if (sideMenu.classList.contains("open")) closeMenu();
-    else openMenu();
+    menu.classList.contains("open") ? closeMenu() : openMenu();
   };
 
-  // click nút
-  menuBtn.addEventListener("click", toggleMenu);
-
-  // click nền mờ
+  btn.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", closeMenu);
 
-  // click link thì đóng menu
-  sideMenu.querySelectorAll("a").forEach(a => {
+  menu.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", closeMenu);
   });
 
-  // ESC để thoát (xịn hơn)
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
