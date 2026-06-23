@@ -9,6 +9,22 @@
 </head>
 <body>
     <a href="index.html" class="home-btn">🏠 HOME</a>
+    <div id="menuBtn">☰</div>
+    <div id="overlay"></div>
+    <nav id="sideMenu">
+        <div class="menu-title">Mục lục</div>
+        <a href="#p1">Khái niệm</a>
+        <a href="#p2">Kĩ năng quan trọng</a>
+        <a href="#p3">Ngôn ngữ</a>
+        <a href="#p4">Template C++</a>
+        <a href="#p5">Xuất nhập</a>
+        <a href="#p6">Kiểu dữ liệu số</a>
+        <a href="#p7">Modulo</a>
+        <a href="#p8">Tối giản</a>
+        <a href="#p9">Tư duy</a>
+        <a href="#p10">Môi trường thi đấu</a>
+        <a href="#p11">Kết luận</a>  
+    </nav>
     <div class="header">
         <h1>CHAPTER 1 - INTRODUCTION</h1>
         <p>Competitive Programming Handbook (diễn giải đầy đủ)</p>
@@ -16,7 +32,7 @@
     <div class="container">
         <!-- 1 -->
         <div class="card">
-            <h2>
+            <h2 id="p1">
                 1. Competitive Programming là gì?
             </h2>
             <p>
@@ -29,7 +45,7 @@
         </div>
         <!-- 2 -->
         <div class="card">
-            <h2>
+            <h2 id="p2">
                 2. Hai kỹ năng quan trọng
             </h2>
             <h3>🔹 Thiết kế thuật toán</h3>
@@ -47,7 +63,7 @@
         </div>
         <!-- 3 -->
         <div class="card">
-            <h2>
+            <h2 id="p3">
                 3. Ngôn ngữ lập trình
             </h2>
             <p>
@@ -64,7 +80,7 @@
         </div>
         <!-- 4 -->
         <div class="card">
-            <h2>
+            <h2 id="p4">
                 4. Template C++ thi đấu
             </h2>
             <div class="note"><pre>#include &lt;bits/stdc++.h&gt;
@@ -80,7 +96,7 @@ int main(){
         </div>
         <!-- 5 -->
         <div class="card">
-            <h2>
+            <h2 id="p5">
                 5. Input / Output
             </h2>
             <ul>
@@ -94,7 +110,7 @@ cin.tie(nullptr);</pre></div>
         </div>
         <!-- 6 -->
         <div class="card">
-            <h2>
+            <h2 id="p6">
                 6. Kiểu dữ liệu số
             </h2>
             <h3>
@@ -116,7 +132,7 @@ cin.tie(nullptr);</pre></div>
         </div>
         <!-- 7 -->
         <div class="card">
-            <h2>7. Modulo (chia dư)</h2>
+            <h2 id="p7">7. Modulo (chia dư)</h2>
             <p>
                 Trong lập trình thi đấu, kết quả thường rất lớn nên ta lấy modulo (ví dụ 1e9+7).
             </p>
@@ -128,7 +144,7 @@ cin.tie(nullptr);</pre></div>
         </div>
         <!-- 8 -->
         <div class="card">
-            <h2>8. Tối giản code</h2>
+            <h2 id="p8">8. Tối giản code</h2>
             <p>Trong thi đấu, code ngắn giúp viết nhanh hơn.</p>
             <ul>
                 <li>typedef / using để rút gọn kiểu dữ liệu</li>
@@ -142,7 +158,7 @@ cin.tie(nullptr);</pre></div>
         </div>
         <!-- 9 -->
         <div class="card">
-            <h2>9. Tư duy toán học</h2>
+            <h2 id="p9">9. Tư duy toán học</h2>
             <p>Competitive Programming yêu cầu nền tảng toán học tốt.</p>
             <ul>
                 <li>Công thức tổng</li>
@@ -153,7 +169,7 @@ cin.tie(nullptr);</pre></div>
         </div>
         <!-- 10 -->
         <div class="card">
-            <h2>10. Môi trường thi đấu</h2>
+            <h2 id="p10">10. Môi trường thi đấu</h2>
             <ul>
                 <li><a href="https://ioinformatics.org/" target="_blank">IOI</a>: học sinh THPT</li>
                 <li><a href="https://icpc.global/" target="_blank">ICPC</a>: sinh viên</li>
@@ -163,10 +179,11 @@ cin.tie(nullptr);</pre></div>
         </div>
         <!-- END -->
         <div class="card">
-            <h2>Kết luận</h2>
+            <h2 id="p11">Kết luận</h2>
             <p>Competitive Programming = <b>Thuật toán + Tư duy + Tốc độ code</b>.
                 Muốn giỏi cần luyện nhiều bài và hiểu bản chất thuật toán.</p>
         </div>
     </div>
+    <script src="menu.js" defer></script>
 </body>
 </html>
