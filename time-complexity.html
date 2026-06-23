@@ -9,13 +9,31 @@
 </head>
 <body>
     <a href="index.html" class="home-btn">🏠 HOME</a>
+    <div id="menuBtn">☰</div>
+    <div id="overlay"></div>
+    <nav id="sideMenu">
+        <div class="menu-title">Mục lục</div>
+        <a href="#p1">Khái niệm</a>
+        <a href="#p2">Quy tắc tính</a>
+        <a href="#p3">Vòng lặp</a>
+        <a href="#p4">Bậc tăng trưởng</a>
+        <a href="#p5">Các giai đoạn của thuật toán</a>
+        <a href="#p6">Nhiều biến đầu vào</a>
+        <a href="#p7">Đệ quy</a>
+        <a href="#p8">Các lớp độ phức tạp phổ biến</a>
+        <a href="#p9">Thuật toán đa thức</a>
+        <a href="#p10">Ước lượng hiệu năng thuật toán</a>
+        <a href="#p11">Bài toán Maximum Subarray Sum</a> 
+        <a href="#p12">So sánh hiệu năng</a>
+        <a href="#p13">Tổng kết</a>
+    </nav>
     <div class="header">
         <h1>CHAPTER 2 - TIME COMPLEXITY</h1>
         <p>Độ phức tạp thời gian</p>
     </div>
     <div class="container">
         <div class="card">
-            <h2>1. Time Complexity là gì?</h2>
+            <h2 id="p1">1. Time Complexity là gì?</h2>
             <ul>
                 <li>
                     <p>Khi giải một bài toán, việc chương trình cho ra đáp án đúng là chưa đủ.
@@ -36,7 +54,7 @@
             <p>Nhờ phân tích độ phức tạp, ta có thể đánh giá một ý tưởng có khả thi hay không trước khi bắt tay vào viết code.</p>
         </div>
         <div class="card">
-            <h2>2. Quy tắc tính độ phức tạp</h2>
+            <h2 id="p2">2. Quy tắc tính độ phức tạp</h2>
             <ul>
                 <li><p>Để xác định độ phức tạp của một thuật toán, ta phân tích những phần tiêu tốn thời gian nhất của chương trình.</p></li>
                 <li><p>Trong đa số trường hợp, các vòng lặp và lời gọi đệ quy quyết định phần lớn thời gian thực thi.</p></li>
@@ -46,7 +64,7 @@
             </div>
         </div>
         <div class="card">
-            <h2>3. Vòng lặp (Loops)</h2>
+            <h2 id="p3">3. Vòng lặp (Loops)</h2>
             <p>Vòng lặp là nguyên nhân phổ biến nhất làm tăng thời gian chạy của thuật toán.</p>
             <h3>🔹Một vòng lặp</h3>
             <div class="note"><pre>for(int i=0; i&lt;n; i++){
@@ -78,7 +96,7 @@
             <p><b>Tổng quát, k vòng lặp lồng nhau thường tạo ra độ phức tạp O(nᵏ).</b></p>
         </div>
         <div class="card">
-            <h2>4. Bậc tăng trưởng (Order of Magnitude)</h2>
+            <h2 id="p4">4. Bậc tăng trưởng (Order of Magnitude)</h2>
             <p>Time Complexity không quan tâm chính xác thuật toán chạy bao nhiêu lần, mà chỉ quan tâm tốc độ tăng trưởng khi n tăng lớn.</p>
             <ul>
                 <div class="note">
@@ -97,7 +115,7 @@
         </div>
     </ul>
         <div class="card">
-            <h2>5. Các giai đoạn của thuật toán</h2>
+            <h2 id="p5">5. Các giai đoạn của thuật toán</h2>
             <p>Nhiều thuật toán gồm nhiều phần chạy nối tiếp nhau.</p>
             <ul>
                 <li>Giai đoạn 1: O(n)</li>
@@ -111,7 +129,7 @@
             <p>Thành phần lớn nhất quyết định tốc độ toàn bộ chương trình.</p>
         </div>
         <div class="card">
-            <h2>6. Nhiều biến đầu vào</h2>
+            <h2 id="p6">6. Nhiều biến đầu vào</h2>
             <div class="note"><pre>for(int i=0; i&lt;n; i++){
     for(int j=0; j&lt;m; j++){
 
@@ -126,7 +144,7 @@
             <p><b>Không phải mọi bài toán đều chỉ có một biến n.</b></p>
         </div>
         <div class="card">
-            <h2>7. Đệ quy (Recursion)</h2>
+            <h2 id="p7">7. Đệ quy (Recursion)</h2>
             <p>Đệ quy là kỹ thuật trong đó một hàm tự gọi lại chính nó để giải quyết bài toán bằng cách chia nhỏ thành các bài toán con tương tự.</p>
             <p>Khi phân tích độ phức tạp của hàm đệ quy, ta cần quan tâm đến:</p>
             <ul>
@@ -157,7 +175,7 @@
             <p><b>Đây là lý do nhiều thuật toán đệ quy ngây thơ trở nên cực kỳ chậm khi n lớn.</b></p>
         </div>
         <div class="card">
-            <h2>8. Các lớp độ phức tạp phổ biến</h2>
+            <h2 id="p8">8. Các lớp độ phức tạp phổ biến</h2>
             <p>Trong thực tế có một số mức độ phức tạp xuất hiện rất thường xuyên.
                 Việc nhận biết chúng giúp dự đoán khả năng chạy được của thuật toán.</p>
             <h3>🔹O(1) - Constant Time</h3>
@@ -183,7 +201,7 @@
             <p>Thường xuất hiện khi duyệt tất cả hoán vị.</p>
         </div>
         <div class="card">
-            <h2>9. Thuật toán đa thức (Polynomial Algorithms)</h2>
+            <h2 id="p9">9. Thuật toán đa thức (Polynomial Algorithms)</h2>
             <p>Một thuật toán được gọi là đa thức nếu độ phức tạp của nó có dạng: <b>O(nᵏ)</b></p>
             <p>Trong đó k là hằng số.</p>
             <p>Các độ phức tạp như:</p>
@@ -201,7 +219,7 @@
             </div>
         </div>
         <div class="card">
-            <h2>10. Ước lượng hiệu năng thuật toán</h2>
+            <h2 id="p10">10. Ước lượng hiệu năng thuật toán</h2>
             <p><ul>
                 <li>Trước khi code, ta nên ước lượng xem thuật toán có đủ nhanh hay không.</li><br>
                 <li>Máy tính hiện đại có thể thực hiện hàng trăm triệu phép tính mỗi giây.</li>
@@ -241,7 +259,7 @@
             <p>Bảng trên chỉ mang tính ước lượng nhưng rất hữu ích khi chọn hướng giải.</p>
         </div>
         <div class="card">
-            <h2>11. Bài toán Maximum Subarray Sum</h2>
+            <h2 id="p11">11. Bài toán Maximum Subarray Sum</h2>
             <ul>
                 <li><p>Đây là một bài toán kinh điển thường được dùng để minh họa cách tối ưu thuật toán.</p></li>
                 <li><p>Cho một mảng gồm n số nguyên. Nhiệm vụ là tìm tổng lớn nhất của một đoạn liên tiếp trong mảng.</p></li>
@@ -257,7 +275,7 @@
                 <p><b>Ban đầu ta sẽ xây dựng một lời giải đơn giản, sau đó từng bước tối ưu.</b></p>
         </div>
         <div class="card">
-            <h2>12. Thuật toán 1 - Brute Force</h2>
+            <h2>11.1. Thuật toán 1 - Brute Force</h2>
             <ul>
                 <li><p>Cách đơn giản nhất là duyệt toàn bộ các đoạn con có thể.</p></li>
                 <li><p>Với mỗi đoạn con, ta tính tổng rồi cập nhật kết quả lớn nhất.</p></li>
@@ -274,7 +292,7 @@
             </ul>
         </div>
         <div class="card">
-            <h2>13. Thuật toán 2 - Tối ưu một vòng lặp</h2>
+            <h2>11.2. Thuật toán 2 - Tối ưu một vòng lặp</h2>
             <ul>
                 <li><p>Quan sát rằng khi mở rộng đoạn con sang phải, ta không cần tính lại tổng từ đầu.</p></li>
                 <li><p>Chỉ cần cộng thêm phần tử mới vào tổng hiện tại.</p></li>
@@ -290,7 +308,7 @@
             <p><b>Đây là cải tiến đáng kể so với O(n³).</b></p>
         </div>
         <div class="card">
-            <h2>14. Thuật toán Kadane - O(n)</h2>
+            <h2>11.3. Thuật toán Kadane - O(n)</h2>
             <p>Điều bất ngờ là bài toán này có thể giải chỉ bằng <b>một lần</b>  duyệt mảng.</p>
             <p><u>Ý tưởng</u>: Tại mỗi vị trí, lưu tổng lớn nhất của đoạn con kết thúc tại vị trí đó.</p>
             <div class="note"><pre>int best=0;
@@ -312,7 +330,7 @@ for(int i=0; i&lt;n; i++){
             <p><b>Đây là lời giải tối ưu cho bài toán Maximum Subarray Sum.</b></p>
         </div>
         <div class="card">
-            <h2>15. So sánh hiệu năng</h2>
+            <h2 id="p12">12. So sánh hiệu năng</h2>
             <p>Khi kích thước dữ liệu tăng lên, sự khác biệt giữa các thuật toán trở nên rất rõ ràng.</p>
             <div class="table-wrapper">
                 <table class="table">
@@ -357,7 +375,7 @@ for(int i=0; i&lt;n; i++){
             <p>Chỉ cần giảm từ O(n²) xuống O(n), tốc độ thực tế có thể tăng hàng nghìn lần.</p>
         </div>
         <div class="card">
-            <h2>16. Tổng kết</h2>
+            <h2 id="p13">13. Tổng kết</h2>
             <p>Time Complexity là công cụ quan trọng nhất trong Competitive Programming.</p>
             <ul>
                 <li>Giúp đánh giá thuật toán trước khi code</li>
