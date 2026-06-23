@@ -187,7 +187,7 @@ html{
     position:fixed;
 
     top:0;
-    left:-300px;
+    left:0;
 
     width:min(280px,80vw);
     height:100vh;
@@ -200,15 +200,15 @@ html{
 
     overflow-y:auto;
 
-    transition:left .25s;
+    transform:translateX(-100%);
+    transition:transform .25s;
 
     z-index:1001;
 }
 
 #sideMenu.open{
-    left:0;
+    transform:translateX(0);
 }
-
 #sideMenu .menu-title{
     color:#4cc9f0;
     font-size:18px;
