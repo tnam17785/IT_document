@@ -299,3 +299,32 @@ html{
         width:85vw;
     }
 }
+/* ===== Mục lục con ===== */
+
+#sideMenu details{
+    margin:4px 0;
+}
+
+#sideMenu summary{
+    list-style:none;
+    cursor:pointer;
+    user-select:none;
+    padding:12px 18px;
+}
+
+#sideMenu summary::-webkit-details-marker{
+    display:none;
+}
+
+#sideMenu summary::before{
+    content:"▶ ";
+}
+
+#sideMenu details[open] summary::before{
+    content:"▼ ";
+}
+
+#sideMenu details a{
+    display:block;
+    padding:10px 18px 10px 38px;
+}
