@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="mylogo.png">
+  <title>Ten_tieu_de</title>
+</head>
+<body>
+  <a href="index.html" class="home-btn">🏠 HOME</a>
+  <div id="menuBtn">☰</div>
+  <div id="overlay"></div>
+  <nav id="sideMenu">
+    <div class="menu-title">Mục lục</div>
+    <a href="#p1">Ten_muc</a>
+    <a href="#p2">Ten_muc</a>
+    ...
+  </nav>
+  <div class="header">
+    <h1>Chapter 3: Sorting</h1>
+    <p>Sắp xếp</p>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h2 id="p1">Giới thiệu về sắp xếp</h2>
+      <p>Sắp xếp (Sorting) là một trong những bài toán qua trọng nhất trong khoa học máy tính 
+        và lập trình. Hầu như bất kỳ chương trình nào xử lý dữ lieu cũng đều có lúc cần đưa dữ liệu
+        về một thứ tự nhất định. Thứ tự này có thể tăng dần, giảm dần hoặc theo một tiêu chí 
+        do người lập trình quy định.</p>
+      <p>Ví dụ, khi sử dung một ứng dung bán hàng, người dùng muốn xem danh sách sản phẩm theo giá 
+        từ thấp đến cao hoặc từ cao xuống thấp. Trong danh bạ điện thoại, các liên hệ được sắp xếp
+        theo bảng chữ cái để việc tìm kiếm thuận tiện hơn. Trong trò chơi điện tử, bảng xếp hạng
+        người chơi cũng đc sắp xếp theo điểm số đạt được.</p>
+      <p>Những ví dụ trên cho thấy sắp xếp xuất hiện ở khắp mọi nơi. Không chỉ trong các phần mềm 
+        thông thường, các thuật toán sắp xếp còn đóng vai trò cực kỳ quan trọng trong lập trình 
+        thi đấu và thiết kế thuật toán.</p>
+    </div>
+    <div class="card">
+      <h2 id="p2">Vì sao phải sắp xếp?</h2>
+      <p>Nhiều bài toán tưởng như không liên quan đến sắp xếp nhưng lại được giải quyết nhanh hơn 
+        nhiều nếu dữ liệu đã được sắp xếp trước.</p>
+      <p>Ví dụ:</p>
+        <ul>
+          <li>Kiểm tra xem 1 mảng có chứa 2 phần tử giống nhau hay không.</li>
+          <li>Tìm phần tử xuất hiện nhiều lần nhất.</li>
+          <li>Ghép 2 tập dữ liệu.</li>
+          <li>Xử lý các khoảng (Intervals).</li>
+          <li>Giải nhiều bài toán tham lam (Greedy).</li>
+        </ul>
+        <p>Giả sử ta có mảng:</p>
+        <div class="note">
+          7 2 9 5 2 8 1
+        </div>
+        <p>Nếu muốn kiểm tra xem có số nào xuất hiện hai lần hay không, ta có thể phải so sánh rất
+          nhiều cặp phần tử.</p>
+        <p>Nhưng nếu sắp xếp trước:</p>
+        <div class="note">
+          1 2 2 5 7 8 9
+        </div>
+        <p>Lúc này chỉ cần duyệt một lần và kiểm tra hai phần tử đứng cạnh nhau là đủ.</p>
+        <p>Có thể thấy, đôi khi dành thời gian để sắp xếp sẽ giúp <b>giảm đáng kể</b> thời gian xử lý
+          của toàn bộ chương trình.</p>
+    </div>
+    <div class="card">
+      <h2 id="p2">Bài toán sắp xếp</h2>
+      <p>Bài toán sắp xếp cơ bản được phát biểu như sau:</p>
+      <div class="note">
+        Cho một dãy gồm n phần tử. Hãy sắp xếp các phần tử theo thứ tự tăng dần.
+      </div>
+        Ví dụ:<br>
+        Dãy ban đầu:
+        <div class="note">
+          1 3 8 2 9 2 5 6
+        </div>
+        Sau khi sắp xếp:
+        <div class="note">
+          1 2 2 3 5 6 8 9
+        </div>
+      <p>Nghe có vẻ đơn giản, nhưng để thực hiện nhanh với hàng triệu phần tử lại là một vấn đề hoàn toàn khác.</p>
+    </div>
+    <div class="card">
+      <h2 id="p2">Độ phức tạp của thuật toán sắp xếp</h2>
+      <p>Có rất nhiều thuật toán sắp xếp khác nhau.</p>
+        <ul>
+          <li>Một số thuật toán rất đơn giản nên dễ học và dễ cài đặt, nhưng chạy chậm.</li>
+          <li>Một số thuật toán phức tạp hơn nhưng có thể xử lý lượng dữ liệu cực lớn trong thời gian ngắn.</li>
+        </ul>
+      Thông thường chúng được chia thành 2 nhóm:
+      <h3>🔹Thuật toán O(n²)</h3>
+      <p>Đây là nhóm thuật toán đơn giản nhất.</p>
+      Đặc điểm:
+      <ul>
+        <li>Dễ hiểu.</li>
+        <li>Dễ cài đặt.</li>
+        <li>Phù hợp khi học thuật toán.</li>
+        <li>Chỉ nên dùng với dữ liệu nhỏ.</li>
+      </ul>
+      Ví dụ:
+      <ul>
+        <li>Bubble Sort</li>
+        <li>Selection Sort</li>
+        <li>Insertion Sort</li>
+      </ul>
+      <p>Nếu số phần tử tăng lên gấp 10 lần thì thời gian chạy có thể tăng gần 100 lần.</p>
+      <h3>🔹Thuật toán O(n log n)</h3>
+      <p>Đây là nhóm thuật toán hiệu quả.</p>
+      Ví dụ:
+      <ul>
+        <li>Merge Sort</li>
+        <li>Heap Sort</li>
+        <li>Quick Sort (trung bình)</li>
+      </ul>
+      Các thuật toán này có khả năng xử lý hàng trăm nghìn hoặc hàng triệu phần tử trong 
+      thời gian rất ngắn.
+      <p>Đây cũng là nhóm thuật toán được sử dụng phổ biến nhất trong thực tế.</p>
+    </div>
+    <div class="card">
+      <h2 id="p2">Thuật toán Bubble Sort</h2>
+      <p>Bubble Sort là một trong những thuật toán sắp xếp đầu tiên mà hầu hết người học
+        lập trình đều được làm quen.</p>
+      Ý tưởng của thuật toán rất đơn giản:<br>
+      <ol>
+        <li>Ta liên tục duyệt qua mảng và so sánh từng cặp phần tử đứng cạnh nhau.</li>
+        <li>Nếu hai phần tử đang đứng sai thứ tự thì đổi chỗ chúng.</li>
+        <li>Sau mỗi lần duyệt, phần tử lớn nhất trong đoạn chưa sắp xếp sẽ 
+          dần "nổi" về cuối mảng.</li>
+      </ol>
+      <p>Chính vì hiện tượng này giống như bong bóng nổi lên mặt nước nên thuật toán
+        được gọi là <b>Bubble Sort</b>.</p>
+      ...
+    </div>
+    ...
+  </div>
+  <script src="menu.js" defer></script>
+</body>
+</html>
