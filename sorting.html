@@ -19,28 +19,30 @@
   </nav>
   <div class="header">
     <h1>Chapter 3: Sorting</h1>
-    <p>Sắp xếp</p>
+    <p>Bài toán sắp xếp</p>
   </div>
   <div class="container">
     <div class="card">
       <h2 id="p1">Giới thiệu về sắp xếp</h2>
-      <p>Sắp xếp (Sorting) là một trong những bài toán qua trọng nhất trong khoa học máy tính 
+      <ul>
+      <li><p><b>Sắp xếp</b> (Sorting) là một trong những bài toán quan trọng nhất trong khoa học máy tính 
         và lập trình. Hầu như bất kỳ chương trình nào xử lý dữ lieu cũng đều có lúc cần đưa dữ liệu
         về một thứ tự nhất định. Thứ tự này có thể tăng dần, giảm dần hoặc theo một tiêu chí 
-        do người lập trình quy định.</p>
-      <p>Ví dụ, khi sử dung một ứng dung bán hàng, người dùng muốn xem danh sách sản phẩm theo giá 
+        do người lập trình quy định.</p></li>
+      <li><p>Ví dụ, khi sử dung một ứng dung bán hàng, người dùng muốn xem danh sách sản phẩm theo giá 
         từ thấp đến cao hoặc từ cao xuống thấp. Trong danh bạ điện thoại, các liên hệ được sắp xếp
         theo bảng chữ cái để việc tìm kiếm thuận tiện hơn. Trong trò chơi điện tử, bảng xếp hạng
-        người chơi cũng đc sắp xếp theo điểm số đạt được.</p>
-      <p>Những ví dụ trên cho thấy sắp xếp xuất hiện ở khắp mọi nơi. Không chỉ trong các phần mềm 
+        người chơi cũng đc sắp xếp theo điểm số đạt được.</p></li>
+      <li><p>Những ví dụ trên cho thấy sắp xếp xuất hiện ở khắp mọi nơi. Không chỉ trong các phần mềm 
         thông thường, các thuật toán sắp xếp còn đóng vai trò cực kỳ quan trọng trong lập trình 
         thi đấu và thiết kế thuật toán.</p>
+      </ul></li>
     </div>
     <div class="card">
       <h2 id="p2">Vì sao phải sắp xếp?</h2>
       <p>Nhiều bài toán tưởng như không liên quan đến sắp xếp nhưng lại được giải quyết nhanh hơn 
         nhiều nếu dữ liệu đã được sắp xếp trước.</p>
-      <p>Ví dụ:</p>
+      <p><u>Ví dụ</u>:</p>
         <ul>
           <li>Kiểm tra xem 1 mảng có chứa 2 phần tử giống nhau hay không.</li>
           <li>Tìm phần tử xuất hiện nhiều lần nhất.</li>
@@ -48,13 +50,13 @@
           <li>Xử lý các khoảng (Intervals).</li>
           <li>Giải nhiều bài toán tham lam (Greedy).</li>
         </ul>
-        <p>Giả sử ta có mảng:</p>
+        <p>▼ Giả sử ta có mảng:</p>
         <div class="note">
           7 2 9 5 2 8 1
         </div>
-        <p>Nếu muốn kiểm tra xem có số nào xuất hiện hai lần hay không, ta có thể phải so sánh rất
+        <p>Nếu muốn kiểm tra xem có số nào xuất hiện 2 lần hay không, ta có thể phải so sánh rất
           nhiều cặp phần tử.</p>
-        <p>Nhưng nếu sắp xếp trước:</p>
+        <p>▼ Nhưng nếu sắp xếp trước:</p>
         <div class="note">
           1 2 2 5 7 8 9
         </div>
@@ -68,12 +70,12 @@
       <div class="note">
         Cho một dãy gồm n phần tử. Hãy sắp xếp các phần tử theo thứ tự tăng dần.
       </div>
-        Ví dụ:<br>
-        Dãy ban đầu:
+        <p><u>Ví dụ</u>:</p>
+        <p>▼ Dãy ban đầu:</p>
         <div class="note">
           1 3 8 2 9 2 5 6
         </div>
-        Sau khi sắp xếp:
+        <p>▼ Sau khi sắp xếp:</p>
         <div class="note">
           1 2 2 3 5 6 8 9
         </div>
@@ -86,17 +88,17 @@
           <li>Một số thuật toán rất đơn giản nên dễ học và dễ cài đặt, nhưng chạy chậm.</li>
           <li>Một số thuật toán phức tạp hơn nhưng có thể xử lý lượng dữ liệu cực lớn trong thời gian ngắn.</li>
         </ul>
-      Thông thường chúng được chia thành 2 nhóm:
+      Thông thường chúng được chia thành <b>2 nhóm</b>:
       <h3>🔹Thuật toán O(n²)</h3>
       <p>Đây là nhóm thuật toán đơn giản nhất.</p>
-      Đặc điểm:
+      ▼ <b>Đặc điểm</b>:
       <ul>
         <li>Dễ hiểu.</li>
         <li>Dễ cài đặt.</li>
         <li>Phù hợp khi học thuật toán.</li>
         <li>Chỉ nên dùng với dữ liệu nhỏ.</li>
       </ul>
-      Ví dụ:
+      ▼ <b>Ví dụ</b>:
       <ul>
         <li>Bubble Sort</li>
         <li>Selection Sort</li>
@@ -105,7 +107,7 @@
       <p>Nếu số phần tử tăng lên gấp 10 lần thì thời gian chạy có thể tăng gần 100 lần.</p>
       <h3>🔹Thuật toán O(n log n)</h3>
       <p>Đây là nhóm thuật toán hiệu quả.</p>
-      Ví dụ:
+      ▼ <b>Ví dụ</b>:
       <ul>
         <li>Merge Sort</li>
         <li>Heap Sort</li>
@@ -119,7 +121,7 @@
       <h2 id="p2">Thuật toán Bubble Sort</h2>
       <p>Bubble Sort là một trong những thuật toán sắp xếp đầu tiên mà hầu hết người học
         lập trình đều được làm quen.</p>
-      Ý tưởng của thuật toán rất đơn giản:<br>
+      ▼ Ý tưởng của thuật toán rất đơn giản:<br>
       <ol>
         <li>Ta liên tục duyệt qua mảng và so sánh từng cặp phần tử đứng cạnh nhau.</li>
         <li>Nếu hai phần tử đang đứng sai thứ tự thì đổi chỗ chúng.</li>
@@ -128,7 +130,98 @@
       </ol>
       <p>Chính vì hiện tượng này giống như bong bóng nổi lên mặt nước nên thuật toán
         được gọi là <b>Bubble Sort</b>.</p>
-      ...
+      <h3>🔹Ví dụ</h3>
+      <ul>
+        <li><p>Ban đầu:</p></li>
+        <div class="note">
+          1 3 2 8 <b>9</b> 2 5 6
+        </div>
+        <li><p>Sau vài lần đổi chỗ:</p></li>
+        <div class="note">
+          1 3 2 8 2 <b>9</b> 5 6
+        </div>
+        <br><div class="note">
+          1 3 2 8 2 5 <b>9</b> 6
+        </div>
+        <br><div class="note">
+          1 3 2 8 2 5 6 <b>9</b>
+        </div>
+      </ul>
+      <p>==&gt; Có thể thấy số 9 đã được đưa về đúng vị trí cuối cùng.</p>
+      <p>Tiếp tục lặp lại quá trình trên thì cuối cùng toàn bộ mảng sẽ được sắp xếp.</p>
+      <h3>🔹Bubble Sort hoạt động như thế nào?</h3>
+      <p>Giả sử mảng có n phần tử.</p>
+      <ul>
+        <li>Lần duyệt thứ nhất: Phần tử lớn nhất về cuối.</li>
+        <li>Lần duyệt thứ hai: Phần tử lớn thứ 2 về đúng vị trí.</li>
+        ...
+        <li>Lần duyệt cuối cùng: Toàn bộ mảng đã được sắp xếp.</li>
+      </ul>
+      <p>Thuật toán không cần biết phần tử lớn nhất ở đâu, chỉ cần 
+        liên tục so sánh 2 phần tử liền kề và đổi chỗ khi cần thiết.</p>
+      <h3>🔹Ưu điểm</h3>
+      <ul>
+        <li>Rất dễ hiểu.</li>
+        <li>Dễ cài đặt.</li>
+        <li>Thích hợp để học thuật toán.</li>
+      </ul>
+      <h3>🔹Nhược điểm</h3>
+      <ul>
+        <li>Chậm.</li>
+        <li>Không phù hợp với dữ liệu lớn.</li>
+        <li>Phải thực hiện rất nhiều phép so sánh và đổi chỗ.</li>
+      </ul>
+      <h3>🔹Độ phức tạp</h3>
+      <p>Trong trường hợp xấu nhất:</p>
+      <ul>
+        <li>Mỗi lượt phải so sánh gần n phần tử.</li>
+        <li>Có khoảng n lượt duyệt.</li>
+      </ul>
+      <p>Do đó:</p>
+      <div class="note">
+        Thời gian: O(n²)
+      </div>
+      <p>Đây là lý do Bubble Sort hầu như <b>không</b> được sử dụng
+        trong các chương trình thực tế.</p>
+    </div>
+    <div class="card">
+      <h2 id="#">Nghịch thế (Inversion)</h2>
+      <p>Khi nghiên cứu các thuật toán sắp xếp, có một khái niệm rất quan trọng
+        gọi là <b>nghịch thế</b> (Inversion).</p>
+      <p>Một nghịch thế là một cặp phần tử mà:</p>
+      <ul>
+        <li>Phần tử đứng trước</li>
+        <li>lại có giá trị lớn hơn phần tử đứng sau.</li>
+      </ul>
+      <p>==&gt; Nói cách khác, đây là hai phần tử đang đứng sai vị trí so với thứ tự tăng dần.</p>
+      <p>▼ <u>Ví dụ</u>:</p>
+      <div class="note">
+        1 2 2 6 3 5 9 8
+      </div>
+      <p>▼ <u>Các nghịch thế là</u>:</p>
+      <div class="note">
+        (6,3)<br>(6,5)<br>(9,8)
+      </div>
+      <p>Tổng cộng có 3 nghịch thế.</p>
+      <h3>Ý nghĩa của nghịch thế</h3>
+      <p>Số lượng nghịch thế phản ánh mức độ "lộn xộn" của mảng.</p>
+      <ul>
+        <li>Nếu không có nghịch thế, mảng đã được sắp xếp hoàn toàn.</li>
+        <li>Càng nhiều nghịch thế, mảng càng xa trạng thái đã sắp xếp.</li>
+        <li>Trong trường hợp mảng bị đảo ngược hoàn toàn, số nghịch thế đạt giá trị lớn nhất.</li>
+      </ul>
+      <p>▼ <u>Ví dụ</u>:</p>
+      <div class="note">
+        5 4 3 2 1
+      </div>
+      <p>Đây là trường hợp xấu nhất, mọi cặp phần tử đều tạo thành nghịch thế.</p>
+      <p>▼ Số nghịch thế tối đa là:</p>
+      <div class="note">
+        n(n − 1) / 2
+      </div>
+      <p>Điều này cũng giải thích vì sao các thuật toán chỉ được phép đổi chỗ 2 phần tử
+        liền kề thường phải thực hiện rất nhiều lần hoán đổi trước khi hoàn thành việc sắp xếp.</p>
+      <h3>🔹Mối liên hệ với Bubble Sort</h3>
     </div>
     ...
   </div>
