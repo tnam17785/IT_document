@@ -234,7 +234,7 @@ html{
 }
 hr {
     /* Thay đổi từ 150px thành 50% để dài đúng một nửa */
-    width: 50%; 
+    width: 75%; 
     
     /* Xóa viền mặc định và tạo nét đứt */
     border: none;
@@ -311,7 +311,7 @@ hr {
     }
     hr {
         /* Trên điện thoại cũng để 50% cho đồng bộ hoặc 60% tùy bạn muốn */
-        width: 50%; 
+        width: 75%; 
         
         /* Thu nhỏ khoảng cách trên dưới lại một chút cho hợp màn hình nhỏ */
         margin: 20px auto; 
