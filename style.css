@@ -232,6 +232,17 @@ html{
     color:#4cc9f0;
     padding-left:6px;
 }
+hr {
+    /* Độ rộng cố định vừa phải trên máy tính */
+    width: 150px; 
+    
+    /* Xóa viền mặc định và tạo nét đứt */
+    border: none;
+    border-top: 2px dashed #4a5568; 
+    
+    /* Căn giữa và tạo khoảng cách trên dưới */
+    margin: 30px auto; 
+}
 /* Mobile */
 @media (max-width:768px){
 
@@ -297,6 +308,16 @@ html{
     }
     #sideMenu{
         width:85vw;
+    }
+    hr {
+        /* Trên điện thoại chuyển sang dùng % để tự co giãn đẹp mắt */
+        width: 35%; 
+        
+        /* Thu nhỏ khoảng cách trên dưới lại một chút cho hợp màn hình nhỏ */
+        margin: 20px auto; 
+        
+        /* Giảm độ dày nét đứt xuống 1.5px để nhìn thanh mảnh hơn */
+        border-top: 1.5px dashed #4a5568; 
     }
 }
 /* ===== Mục lục con ===== */
