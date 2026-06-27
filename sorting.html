@@ -197,7 +197,7 @@
         trong các chương trình thực tế.</p>
     </div>
     <div class="card">
-      <h2 id="3">3. Nghịch thế (Inversion)</h2>
+      <h2 id="p3">3. Nghịch thế (Inversion)</h2>
       <p>Khi nghiên cứu các thuật toán sắp xếp, có một khái niệm rất quan trọng
         gọi là <b>nghịch thế</b> (Inversion).</p>
       <p>Một nghịch thế là một cặp phần tử mà:</p>
@@ -252,10 +252,91 @@
           và giải thích vì sao nhiều thuật toán đơn giản phải mất nhiều thời gian để hoàn thành 
           việc sắp xếp.</p></li>
       </ul>
-      <p>Ở phần tiếp theo, chúng ta sẽ tìm hiểu các thuật toán sắp xếp hiệu quả hơn như Merge Sort,
-        giới hạn lý thuyết của các thuật toán sắp xếp và Counting Sort.</p>
     </div>
-    
+    <div class="card">
+      <h2 id="p4">4. các thuật toán sắp xếp có độ phức tạp O(n log n)</h2>
+      <ul>
+        <li><p>Trong mục trước, chúng ta đã tìm hiểu về Bubble Sort – một thuật toán đơn giản 
+          và dễ cài đặt. Tuy nhiên, Bubble Sort có độ phức tạp thời gian là O(n²), vì vậy hiệu suất
+          của thuật toán sẽ giảm đáng kể khi số lượng phần tử tăng lên. Với những mảng 
+          chỉ vài chục phần tử, sự khác biệt về thời gian thực thi gần như không đáng kể. 
+          Nhưng khi phải xử lý hàng trăm nghìn hoặc hàng triệu phần tử, Bubble Sort trở nên
+          quá chậm và không còn phù hợp.</p></li>
+        <li><p>Để giải quyết vấn đề này, các nhà khoa học máy tính đã phát triển nhiều thuật toán
+          sắp xếp hiệu quả hơn. Điểm chung của các thuật toán này là đều có độ phức tạp thời gian
+          khoảng <b>O(n log n)</b>, giúp rút ngắn đáng kể thời gian xử lý so với các 
+          thuật toán bậc hai.</p></li>
+        <li><p>Nhóm thuật toán O(n log n) bao gồm nhiều thuật toán nổi tiếng như <b>Merge Sort</b>,
+          <b>Heap Sort</b> và <b>Quick Sort</b> (trong trường hợp trung bình). Đây là những
+          thuật toán được sử dụng rộng rãi trong thực tế cũng như trong các cuộc thi lập trình.</p></li>
+      </ul>
+      <h3>🔹 Ý nghĩa của độ phức tạp O(n log n)</h3>
+      <p>Để hiểu vì sao O(n log n) lại nhanh hơn O(n²), hãy thử so sánh số phép toán cần thực hiện 
+        khi số lượng phần tử tăng lên.</p>
+      <p>▼ Giả sử cần sắp xếp 1 mảng gồm <b>1000 phần tử.</b></p>
+      <ul>
+        <li><p>Thuật toán O(n²) cần thực hiện khoảng:</p></li>
+        <div class="note">
+          1.000² = 1.000.000 phép toán.
+        </div>
+        <li><p>Trong khi đó, thuật toán O(n log n) chỉ cần khoảng:</p></li>
+        <div class="note">
+          1.000 × log₂(1.000) ≈ 1.000 × 10 = 10.000 phép toán.
+        </div>
+      </ul>
+      <p>Như vậy, sự chênh lệch đã lên tới khoảng <b>100 lần</b>.</p>
+      <p>▼ Nếu số phần tử tăng lên <b>1.000.000</b>, khoảng cách còn lớn hơn rất nhiều:</p>
+      <ul>
+        <li>O(n²) ≈ 10¹² phép toán.</li>
+        <li>O(n log n) ≈ 20.000.000 phép toán.</li>
+      </ul>
+      <p>Đây là lý do các thuật toán O(n²) hầu như không được sử dụng để xử lý dữ liệu lớn.</p>
+      <h3>🔹 Vì sao các thuật toán O(n log n) hiệu quả?</h3>
+      <p>Phần lớn các thuật toán trong nhóm này đều sử dụng những ý tưởng thông minh thay vì liên 
+        tục so sánh và đổi chỗ từng cặp phần tử như Bubble Sort.</p>
+      <ul>
+        <li><p>Chẳng hạn, Merge Sort áp dụng chiến lược <b>chia để trị (Divide and Conquer)</b>:
+          thay vì xử lý toàn bộ mảng cùng lúc, thuật toán chia mảng thành nhiều phần nhỏ,
+          sắp xếp từng phần rồi ghép chúng lại.</p></li>
+        <li><p>Quick Sort lại chọn một phần tử làm <b>pivot (phần tử chốt)</b> để chia mảng thành
+          hai nhóm nhỏ hơn, sau đó tiếp tục sắp xếp từng nhóm.</p></li>
+        <li><p>Heap Sort sử dụng cấu trúc dữ liệu <b>Heap</b> để nhanh chóng tìm và đưa phần tử 
+          lớn nhất hoặc nhỏ nhất về đúng vị trí.</p></li>
+      </ul>
+      <p>Mặc dù cách hoạt động của mỗi thuật toán khác nhau, nhưng chúng đều tận dụng những 
+        đặc điểm của dữ liệu để <b>giảm đáng kể</b> số phép so sánh cần thực hiện.</p>
+      <h3>🔹 Thuật toán nào là tốt nhất?</h3>
+      <p>Không có thuật toán nào luôn tốt nhất trong mọi trường hợp.</p>
+      <ul>
+        <li><b>Merge Sort</b> có thời gian thực thi ổn định là O(n log n), nhưng cần
+          sử dụng thêm bộ nhớ phụ.</li>
+        <li><b>Quick Sort</b> thường là thuật toán nhanh nhất trên thực tế nhờ chi phí thấp và
+          tận dụng tốt bộ nhớ đệm của CPU. Tuy nhiên, trong trường hợp xấu nhất, độ phức tạp
+          có thể lên tới O(n²).</li>
+        <li><b>Heap Sort</b> luôn đảm bảo O(n log n) và không cần nhiều bộ nhớ phụ, nhưng thường chậm
+          hơn Merge Sort và Quick Sort trên dữ liệu thông thường.</li>
+      </ul>
+      <p>Vì vậy, việc lựa chọn thuật toán phụ thuộc vào đặc điểm của bài toán và yêu cầu cụ thể
+        của chương trình.</p>
+      <h3>🔹 Khi nào nên sử dụng các thuật toán O(n log n)?</h3>
+      <ul>
+        <li><p>Trong hầu hết các bài toán thực tế, nếu số lượng phần tử từ vài nghìn trở lên, 
+          các thuật toán O(n log n) gần như luôn là lựa chọn phù hợp.</p></li>
+        <li><p>Đặc biệt, thư viện chuẩn của C++ đã tích hợp sẵn hàm sort(), sử dụng một thuật toán 
+          được tối ưu rất tốt (Introsort – kết hợp giữa Quick Sort, Heap Sort và Insertion Sort).
+          Do đó, lập trình viên thường không cần tự cài đặt các thuật toán sắp xếp mà chỉ cần
+          sử dụng hàm có sẵn.</p></li>
+        <li><p>Tuy nhiên, việc hiểu nguyên lý hoạt động của Merge Sort, Quick Sort hay Heap Sort 
+          vẫn rất quan trọng. Nó giúp chúng ta phân tích độ phức tạp của thuật toán, lựa chọn
+          giải pháp phù hợp và hiểu rõ hơn cách các thư viện chuẩn hoạt động bên trong.</p></li>
+      </ul>
+      <h3>🔹 Kết luận</h3>
+      <p>Các thuật toán sắp xếp O(n log n) là nền tảng của nhiều chương trình hiện đại. So với 
+        các thuật toán O(n²), chúng có khả năng xử lý dữ liệu lớn nhanh hơn rất nhiều và là
+        lựa chọn mặc định trong hầu hết các ứng dụng. Trong mục tiếp theo, chúng ta sẽ tìm hiểu
+        <b>Merge Sort</b> – một trong những thuật toán O(n log n) nổi tiếng nhất, đồng thời cũng là 
+        ví dụ điển hình cho chiến lược <b>chia để trị</b>.</p>
+    </div>
     ...
   </div>
   <script src="menu.js" defer></script>
