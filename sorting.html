@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="mylogo.png">
-  <title>Ten_tieu_de</title>
+  <title>Sorting</title>
 </head>
 <body>
   <a href="index.html" class="home-btn">🏠 HOME</a>
@@ -13,9 +13,21 @@
   <div id="overlay"></div>
   <nav id="sideMenu">
     <div class="menu-title">Mục lục</div>
-    <a href="#p1">Ten_muc</a>
-    <a href="#p2">Ten_muc</a>
-    ...
+    <a href="#p1">1. Giới thiệu về sắp xếp</a>
+    <a href="#p2">2. Bubble Sort</a>
+    <a href="#p3">3. Nghịch thế(Inversions)</a>
+    <a href="#p4">4. Các thuật toán O(n log n)</a>
+    <a href="#p5">5. Merge Sort</a>
+    <a href="#p6">6. Giới hạn của thuật toán sắp xếp</a>
+    <a href="#p7">7. Counting Sort</a>
+    <a href="#p8">8. Sắp xếp trong C++</a>
+    <a href="#p9">9. Toán tử so sánh</a>
+    <a href="#p10">10. Cấu trúc do người dùng định nghĩa</a>
+    <a href="#p11">11. Hàm so sánh</a>
+    <a href="#p12">12. Binary Search</a>
+    <a href="#p13">13. Tìm nghiệm nhỏ nhất</a>
+    <a href="#p14">14. Continuous Search</a>
+    <a href="#p15">15. Ternary Search</a>
   </nav>
   <div class="header">
     <h1>Chapter 3: Sorting</h1>
@@ -23,7 +35,7 @@
   </div>
   <div class="container">
     <div class="card">
-      <h2 id="p1">Giới thiệu về sắp xếp</h2>
+      <h2 id="p1">1. Giới thiệu về sắp xếp</h2>
       <ul>
       <li><p><b>Sắp xếp</b> (Sorting) là một trong những bài toán quan trọng nhất trong khoa học máy tính 
         và lập trình. Hầu như bất kỳ chương trình nào xử lý dữ lieu cũng đều có lúc cần đưa dữ liệu
@@ -38,8 +50,8 @@
         thi đấu và thiết kế thuật toán.</p>
       </ul></li>
     </div>
-    <div class="card">
-      <h2 id="p2">Vì sao phải sắp xếp?</h2>
+    <hr>
+      <h2>Vì sao phải sắp xếp?</h2>
       <p>Nhiều bài toán tưởng như không liên quan đến sắp xếp nhưng lại được giải quyết nhanh hơn 
         nhiều nếu dữ liệu đã được sắp xếp trước.</p>
       <p><b><u>Ví dụ</u>:</b></p>
@@ -63,7 +75,6 @@
         <p>Lúc này chỉ cần duyệt một lần và kiểm tra hai phần tử đứng cạnh nhau là đủ.</p>
         <p>==&gt; Có thể thấy, đôi khi dành thời gian để sắp xếp sẽ giúp <b>giảm đáng kể</b> thời gian xử lý
           của toàn bộ chương trình.</p>
-    </div>
     <div class="card">
       <h2 id="p2">Bài toán sắp xếp</h2>
       <p>Bài toán sắp xếp cơ bản được phát biểu như sau:</p>
