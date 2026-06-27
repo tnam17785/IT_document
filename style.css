@@ -233,8 +233,8 @@ html{
     padding-left:6px;
 }
 hr {
-    /* Độ rộng cố định vừa phải trên máy tính */
-    width: 150px; 
+    /* Thay đổi từ 150px thành 50% để dài đúng một nửa */
+    width: 50%; 
     
     /* Xóa viền mặc định và tạo nét đứt */
     border: none;
@@ -310,8 +310,8 @@ hr {
         width:85vw;
     }
     hr {
-        /* Trên điện thoại chuyển sang dùng % để tự co giãn đẹp mắt */
-        width: 35%; 
+        /* Trên điện thoại cũng để 50% cho đồng bộ hoặc 60% tùy bạn muốn */
+        width: 50%; 
         
         /* Thu nhỏ khoảng cách trên dưới lại một chút cho hợp màn hình nhỏ */
         margin: 20px auto; 
@@ -319,6 +319,7 @@ hr {
         /* Giảm độ dày nét đứt xuống 1.5px để nhìn thanh mảnh hơn */
         border-top: 1.5px dashed #4a5568; 
     }
+
 }
 /* ===== Mục lục con ===== */
 
