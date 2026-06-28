@@ -343,6 +343,221 @@
         <b>Merge Sort</b> – một trong những thuật toán O(n log n) nổi tiếng nhất, đồng thời cũng là 
         ví dụ điển hình cho chiến lược <b>chia để trị</b>.</p>
     </div>
+    <div class="card">
+      <h2 id="p5">5. Merge Sort</h2>
+      <ul>
+        <li><p>Sau khi đã tìm hiểu về các thuật toán sắp xếp có độ phức tạp <b>O(n log n)</b>,
+          chúng ta sẽ nghiên cứu một trong những thuật toán tiêu biểu nhất của nhóm này 
+          là <b>Merge Sort</b> (Sắp xếp trộn). Đây là thuật toán được phát triển dựa trên 
+          tư tưởng <b>chia để trị (Divide and Conquer)</b> và là nền tảng cho nhiều thuật toán 
+          xử lý dữ liệu khác.</p></li>
+        <li><p>Khác với Bubble Sort hay Selection Sort, Merge Sort không cố gắng sắp xếp toàn bộ
+          mảng ngay từ đầu. Thay vào đó, thuật toán chia bài toán lớn thành nhiều bài toán nhỏ hơn,
+          giải quyết từng bài toán nhỏ rồi kết hợp các kết quả lại để thu được lời giải cuối cùng.
+          Nhờ phương pháp này, Merge Sort luôn duy trì được hiệu suất cao ngay cả khi phải xử lý
+          những tập dữ liệu rất lớn.</p></li>
+      </ul>
+      <h3>🔹 Ý tưởng của Merge Sort</h3>
+      <p>Merge Sort hoạt động dựa trên ba bước chính:</p>
+      <ul>
+        <li>Chia mảng thành hai nửa có kích thước gần bằng nhau.</li>
+        <li>Tiếp tục chia mỗi nửa thành các phần nhỏ hơn cho đến khi mỗi mảng con chỉ còn một phần tử.</li>
+        <li>Ghép các mảng con đã được sắp xếp lại với nhau theo đúng thứ tự.</li>
+      </ul>
+      <p>Ý tưởng này nghe có vẻ phức tạp, nhưng thực chất lại rất tự nhiên. Một mảng chỉ gồm 1
+        phần tử luôn được xem là đã được sắp xếp. Vì vậy, thay vì sắp xếp một mảng lớn, 
+        Merge Sort chỉ cần ghép nhiều mảng nhỏ đã có thứ tự để tạo thành một mảng lớn cũng
+        có thứ tự.</p>
+      <h3>🔹 Quá trình chia mảng</h3>
+      <p>Giả sử cần sắp xếp dãy số:</p>
+      <div class="note">
+        8 3 6 2 7 5 1 4
+      </div>
+      <p>Đầu tiên, mảng được chia thành 2 phần:</p>
+      <div class="note">
+        8 3 6 2<br>
+        7 5 1 4
+      </div>
+      <p>Sau đó, mỗi phần lại tiếp tục được chia:</p>
+      <div class="note">
+        8 3<br>
+        6 2<br>
+        7 5<br>
+        1 4<br>
+      </div>
+      <p>Quá trình này tiếp tục cho đến khi mỗi mảng chỉ còn một phần tử:</p>
+      <div class="note">
+        8<br>
+        3<br>
+        6<br>
+        2<br>
+        7<br>
+        5<br>
+        1<br>
+        4
+      </div>
+      <p>==&gt; Lúc này việc chia kết thúc vì không thể chia nhỏ hơn nữa.</p>
+      <h3>🔹 Quá trình trộn</h3>
+      <p>Sau khi chia xong, Merge Sort bắt đầu ghép các mảng con lại.</p>
+      <p>▼ <b><u>Ví dụ</u></b>:</p>
+      <div class="note">
+        8<br>
+        3
+      </div>
+      <p>được ghép thành:</p>
+      <div class="note">
+        3 8
+      </div>
+      <p>Tương tự:</p>
+      <div class="note">
+        6<br>
+        2
+      </div>
+      <p>được ghép thành:</p>
+      <div class="note">
+        2 6
+      </div>
+      <p>Tiếp theo:</p>
+      <div class="note">
+        3 8<br>
+        2 6
+      </div>
+      <p>được ghép thành:</p>
+      <div class="note">
+        2 3 6 8
+      </div>
+      <p>Quá trình này tiếp tục diễn ra cho đến khi tất cả các mảng con được hợp nhất
+        thành một mảng duy nhất:</p>
+      <div class="note">
+        1 2 3 4 5 6 7 8
+      </div>
+      <p>Điểm quan trọng là trong mỗi lần ghép, hai mảng tham gia đều đã được sắp xếp từ trước.
+        Vì vậy, việc tạo ra mảng mới theo đúng thứ tự trở nên rất đơn giản và hiệu quả.</p>
+      <h3>🔹 Tại sao Merge Sort lại nhanh?</h3>
+      <p>Điểm mạnh của Merge Sort nằm ở cách chia nhỏ bài toán.</p>
+      <p>▼ Giả sử có một mảng gồm <b>1.024 phần tử</b>. Thuật toán sẽ chia thành:</p>
+      <div class="note">
+        1024<br>
+        ↓<br>
+        512<br>
+        ↓<br>
+        256<br>
+        ↓<br>
+        128<br>
+        ↓<br>
+        64<br>
+        ↓<br>
+        32<br>
+        ↓<br>
+        16<br>
+        ↓<br>
+        8<br>
+        ↓<br>
+        4<br>
+        ↓<br>
+        2<br>
+        ↓<br>
+        1
+      </div>
+      <p>Chỉ cần khoảng <b>10 lần chia</b> là mọi phần tử đều được tách riêng.</p>
+      <p>▼ Sau đó, thuật toán thực hiện quá trình ghép. Ở mỗi lần ghép, tất cả các phần tử chỉ được
+        duyệt qua đúng một lần. Vì số tầng của quá trình chia là khoảng <b>log₂(n)</b> và mỗi tầng xử lý 
+        <b>n</b> phần tử nên tổng thời gian thực hiện là:</p>
+      <div class="note">
+        O(n log n)
+      </div>
+      <p>==&gt; Đây là lý do Merge Sort nhanh hơn rất nhiều so với các thuật toán có độ phức tạp O(n²).</p>
+      <h3>🔹 Tính ổn định của Merge Sort</h3>
+      <p>Một ưu điểm quan trọng của Merge Sort là <b>tính ổn định (Stable Sort)</b>.</p>
+      <p>▼ Một thuật toán được gọi là ổn định nếu các phần tử có cùng giá trị vẫn giữ nguyên
+        thứ tự xuất hiện ban đầu sau khi sắp xếp.</p>
+      <p>▼ Ví dụ, giả sử danh sách học sinh được sắp xếp theo điểm:</p>
+      <table>
+        <tr>
+          <th>Họ tên</th>
+          <th>Điểm</th>
+        </tr>
+        <tr>
+          <td>An</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Bình</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Cường</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Dũng</td>
+          <td>10</td>
+        </tr>
+      </table>
+      <p>Sau khi sắp xếp theo điểm tăng dần, kết quả là:</p>
+      <table>
+        <tr>
+          <th>Họ tên</th>
+          <th>Điểm</th>
+        </tr>
+        <tr>
+          <td>An</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Cường</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Bình</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Dũng</td>
+          <td>10</td>
+        </tr>
+      </table>
+      <p>==&gt; Có thể thấy An vẫn đứng trước Cường vì hai bạn cùng đạt 8 điểm và Merge Sort
+        không làm thay đổi thứ tự ban đầu của các phần tử bằng nhau.</p>
+      <p>Đặc điểm này rất <b>quan trọng</b> trong nhiều bài toán xử lý dữ liệu.</p>
+      <h3>🔹 Ưu điểm</h3>
+      <p>Merge Sort có nhiều ưu điểm nổi bật:</p>
+      <ul>
+        <li>Luôn có độ phức tạp thời gian O(n log n) trong cả trường hợp tốt nhất, trung bình và xấu nhất.</li>
+        <li>Hoạt động ổn định, không bị ảnh hưởng nhiều bởi cách dữ liệu được sắp xếp ban đầu.</li>
+        <li>Là thuật toán ổn định, giúp giữ nguyên thứ tự của các phần tử bằng nhau.</li>
+        <li>Phù hợp với các tập dữ liệu rất lớn và thường được sử dụng trong các hệ thống xử lý dữ liệu quy mô lớn.</li>
+        <li>Dễ áp dụng trong các bài toán chia để trị và xử lý dữ liệu trên bộ nhớ ngoài.</li>
+      </ul>
+      <h3>🔹 Nhược điểm</h3>
+      <p>Bên cạnh những ưu điểm, Merge Sort cũng tồn tại một số hạn chế.</p>
+      <ul>
+        <li>Thứ nhất, thuật toán cần sử dụng thêm một mảng phụ trong quá trình trộn. Điều này 
+          làm cho lượng bộ nhớ cần sử dụng tăng lên khoảng O(n).</li>
+        <li>Thứ hai, việc sao chép dữ liệu giữa các mảng khiến Merge Sort đôi khi chậm hơn Quick Sort
+          trên các mảng nhỏ, mặc dù cả hai đều có độ phức tạp trung bình là O(n log n).</li>
+        <li>Ngoài ra, việc cài đặt Merge Sort cũng phức tạp hơn Bubble Sort hoặc Insertion Sort do
+          sử dụng đệ quy và quá trình hợp nhất mảng.</li>
+      </ul>
+      <h3>🔹 Ứng dụng của Merge Sort</h3>
+      <p>Merge Sort được sử dụng trong nhiều lĩnh vực của khoa học máy tính và kỹ thuật phần mềm.</p>
+      <p>▼ Một số ứng dụng phổ biến gồm:</p>
+      <ul>
+        <li>Sắp xếp các tập dữ liệu có kích thước rất lớn.</li>
+        <li>Sắp xếp dữ liệu được lưu trên ổ cứng hoặc các thiết bị lưu trữ ngoài (External Sorting).</li>
+        <li>Đếm số nghịch thế (Inversions) trong một mảng.</li>
+        <li>Xử lý các bài toán chia để trị.</li>
+        <li>Là thành phần của nhiều thư viện và hệ thống xử lý dữ liệu.</li>
+      </ul>
+      <h3>🔹 Kết luận</h3>
+      <p>Merge Sort là một trong những thuật toán sắp xếp quan trọng và hiệu quả nhất. 
+        Nhờ áp dụng chiến lược <b>chia để trị</b>, thuật toán luôn đạt độ phức tạp <b>O(n log n)</b>, 
+        ổn định trong mọi trường hợp và phù hợp với các bài toán xử lý dữ liệu lớn. Mặc dù cần
+        thêm bộ nhớ phụ để thực hiện quá trình trộn, Merge Sort vẫn là lựa chọn hàng đầu trong
+        nhiều ứng dụng yêu cầu tính ổn định và hiệu năng cao. Việc hiểu rõ Merge Sort không chỉ
+        giúp nắm vững một thuật toán sắp xếp hiệu quả mà còn tạo nền tảng để học các kỹ thuật
+        chia để trị và nhiều thuật toán nâng cao khác.</p>
+    </div>
     ...
   </div>
   <script src="menu.js" defer></script>
