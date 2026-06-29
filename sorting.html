@@ -649,7 +649,227 @@
       <p>==&gt; Điều này chứng minh rằng không thể xây dựng một cây quyết định có chiều cao nhỏ hơn
         O(n log n), đồng nghĩa với việc không thể có thuật toán sắp xếp dựa trên so sánh nào nhanh
         hơn giới hạn này.</p>
-      ...
+      <h3>🔹 Có thuật toán nào nhanh hơn O(n log n) không?</h3>
+      <p>Câu trả lời là có, nhưng chỉ trong những điều kiện đặc biệt.</p>
+      <p>Các thuật toán như:</p>
+      <ul>
+        <li>Counting Sort</li>
+        <li>Radix Sort</li>
+        <li>Bucket Sort</li>
+      </ul>
+      <p>không hoạt động bằng cách so sánh các phần tử với nhau.</p>
+      <p>Thay vào đó, chúng khai thác những đặc điểm riêng của dữ liệu, chẳng hạn như phạm vi
+        giá trị hoặc cấu trúc của các chữ số.</p>
+      <p>Nhờ vậy, trong những trường hợp phù hợp, các thuật toán này có thể đạt độ phức tạp 
+        <b>O(n)</b> hoặc gần O(n).</p>
+      <p>Tuy nhiên, chúng không thể áp dụng cho mọi loại dữ liệu. Nếu các phần tử là những đối tượng
+        bất kỳ hoặc có phạm vi giá trị quá lớn, các thuật toán này sẽ không còn hiệu quả hoặc
+        thậm chí không thể sử dụng được.</p>
+      <h3>🔹 Ý nghĩa của giới hạn O(n log n)</h3>
+      <ul>
+        <li><p>Việc tồn tại giới hạn dưới giúp chúng ta đánh giá được chất lượng của một thuật toán sắp xếp.</p></li>
+        <li><p>Nếu một thuật toán dựa trên phép so sánh có độ phức tạp O(n²), điều đó có nghĩa 
+          là vẫn còn nhiều khả năng để cải thiện hiệu suất.</p></li>
+        <li><p>Ngược lại, nếu thuật toán đạt <b>O(n log n)</b> trong trường hợp xấu nhất thì có thể xem
+          nó đã gần đạt đến giới hạn tối ưu về mặt lý thuyết.</p></li>
+      </ul>
+      <p>Chính vì vậy, các thuật toán như Merge Sort và Heap Sort luôn được đánh giá rất cao.
+        Chúng không chỉ có hiệu năng tốt mà còn đạt được mức độ tối ưu mà lý thuyết cho phép
+        đối với nhóm thuật toán sắp xếp dựa trên so sánh.</p>
+      <h3>🔹 Kết luận</h3>
+      <p>Giới hạn dưới của bài toán sắp xếp là một trong những kết quả quan trọng nhất của lý thuyết
+        thuật toán. Nó chứng minh rằng mọi thuật toán sắp xếp dựa trên phép so sánh đều phải
+        thực hiện ít nhất <b>O(n log n)</b> phép so sánh trong trường hợp xấu nhất. Vì vậy, những
+        thuật toán như Merge Sort, Heap Sort hay Quick Sort (trong trường hợp trung bình) 
+        được xem là những giải pháp rất hiệu quả và gần như tối ưu.</p>
+      <p>Tuy nhiên, trong những bài toán có dữ liệu mang tính chất đặc biệt, các thuật toán 
+        không dựa trên phép so sánh như <b>Counting Sort</b> hay <b>Radix Sort</b> vẫn có thể đạt tốc độ 
+        cao hơn. Đây cũng sẽ là nội dung được trình bày trong mục tiếp theo của chương.</p>
+    </div>
+    <div class="card">
+      <h2 id="p7">Counting Sort</h2>
+      <ul>
+        <li><p>Trong các mục trước, chúng ta đã tìm hiểu các thuật toán sắp xếp dựa trên phép 
+          so sánh như Bubble Sort và Merge Sort. Những thuật toán này đều phải so sánh các 
+          phần tử với nhau để xác định thứ tự, vì vậy chúng chịu giới hạn về độ phức tạp 
+          <b>O(n log n)</b>. Tuy nhiên, không phải mọi bài toán sắp xếp đều bắt buộc phải sử dụng 
+          phép so sánh.</p></li>
+        <li><p><b>Counting Sort (Sắp xếp đếm)</b> là một thuật toán đặc biệt hoạt động theo 1 cách 
+          hoàn toàn khác. Thay vì liên tục so sánh các phần tử, Counting Sort sẽ <b>đếm số lần 
+          xuất hiện của từng giá trị</b>, sau đó xây dựng lại mảng theo thứ tự tăng dần dựa trên 
+          kết quả đếm được. Nhờ đó, trong những trường hợp phù hợp, thuật toán này có thể đạt 
+          độ phức tạp O(n), nhanh hơn các thuật toán O(n log n).</p></li>
+      </ul>
+      <h2>Ý tưởng của Counting Sort</h2>
+      <p>▼ Giả sử ta có dãy số sau:</p>
+      <div class="note">
+        4 2 7 2 1 5 4 3 2
+      </div>
+      <p>Nếu quan sát, ta thấy các giá trị chỉ nằm trong khoảng từ <b>1 đến 7</b>. Thay vì so sánh 
+        từng cặp số, ta chỉ cần đếm xem mỗi số xuất hiện bao nhiêu lần.</p>
+      <p>▼ Kết quả đếm sẽ là:</p>
+      <table>
+        <tr>
+          <th>Giá trị</th>
+          <th>Số lần xuất hiện</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>1</td>
+        </tr>
+      </table>
+      <p>Sau khi hoàn thành việc đếm, ta chỉ cần duyệt bảng từ giá trị nhỏ nhất đến lớn nhất 
+        và ghi lại mỗi số đúng với số lần xuất hiện của nó.</p>
+      <p>▼ Kết quả cuối cùng là:</p>
+      <div class="note">
+        1 2 2 2 3 4 4 5 7
+      </div>
+      <p>Có thể thấy toàn bộ quá trình không hề cần so sánh giữa các phần tử.</p>
+      <h2>Các bước thực hiện</h2>
+      <p>Counting Sort thường được thực hiện theo ba bước chính.</p>
+      <h3>🔹 Bước 1: Tạo mảng đếm</h3>
+      <p>Đầu tiên, tạo một mảng để lưu số lần xuất hiện của từng giá trị. Ban đầu tất cả 
+        các phần tử của mảng đếm đều bằng 0.</p>
+      <p>Ví dụ, nếu giá trị lớn nhất là 7 thì mảng đếm sẽ gồm 8 ô (tính cả số 0).</p>
+      <h3>🔹 Bước 2: Đếm số lần xuất hiện</h3>
+      <p>Duyệt toàn bộ mảng ban đầu. Mỗi khi gặp một giá trị, tăng bộ đếm của giá trị 
+        đó lên 1 đơn vị.</p>
+      <p>▼ <b><u>Ví dụ</u></b>:</p>
+      <div class="note">
+        4 2 7 2 1 5 4 3 2
+      </div>
+      <p>▼ Sau khi duyệt xong:</p>
+      <div class="note">
+        1 → 1 lần<br>
+        2 → 3 lần<br>
+        3 → 1 lần<br>
+        4 → 2 lần<br>
+        5 → 1 lần<br>
+        6 → 0 lần<br>
+        7 → 1 lần
+      </div>
+      <h3>🔹 Bước 3: Xây dựng lại mảng</h3>
+      <p>Cuối cùng, duyệt mảng đếm từ nhỏ đến lớn. Giá trị nào xuất hiện bao nhiêu lần thì ghi 
+        vào mảng kết quả bấy nhiêu lần.</p>
+      <p><b><u>Ví dụ:</u></b></p>
+      <ul>
+        <li>Ghi số 1 một lần.</li>
+        <li>Ghi số 2 ba lần.</li>
+        <li>Ghi số 3 một lần.</li>
+        <li>Ghi số 4 hai lần.</li>
+        <li>...</li>
+      </ul>
+      <p>Sau khi hoàn thành, mảng đã được sắp xếp.</p>
+      <h2>Ví dụ minh họa</h2>
+      <p>▼ Cho mảng:</p>
+      <div class="note">
+        3 1 4 1 2 5 3 2
+      </div>
+      <p>▼ Sau khi đếm:</p>
+      <table>
+        <tr>
+          <th>Giá trị</th>
+          <th>Số lần</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>1</td>
+        </tr>
+      </table>
+      <p>▼ Tạo lại mảng:</p>
+      <div class="note">
+        1 1 2 2 3 3 4 5
+      </div>
+      <p>Quá trình này chỉ cần duyệt qua dữ liệu và bảng đếm, không phải thực hiện các phép 
+        đổi chỗ như Bubble Sort hay Merge Sort.</p>
+      <h2>Độ phức tạp</h2>
+      <p>▼ Giả sử:</p>
+      <ul>
+        <li><b>n</b> là số lượng phần tử.</li>
+        <li><b>k</b> là giá trị lớn nhất trong mảng.</li>
+      </ul>
+      <p>▼ Thuật toán cần:</p>
+      <ul>
+        <li>Một lần duyệt để đếm.</li>
+        <li>Một lần duyệt mảng đếm.</li>
+        <li>Một lần ghi kết quả.</li>
+      </ul>
+      <p>▼ Do đó, đọ phức tạp là:</p>
+      <div class="note">
+        O(n + k)
+      </div>
+      <p>Nếu <b>k</b> không quá lớn so với <b>n</b>, ta có thể xem thuật toán gần như chạy trong 
+        thời gian <b>O(n)</b>.</p>
+      <p>Đây là một tốc độ rất cao và là ưu điểm lớn nhất của Counting Sort.</p>
+      <h2>Ưu điểm</h2>
+      <p>Counting Sort có nhiều ưu điểm nổi bật:</p>
+      <ul>
+        <li>Độ phức tạp thời gian rất thấp khi dữ liệu phù hợp.</li>
+        <li>Không cần thực hiện các phép so sánh giữa các phần tử.</li>
+        <li>Dễ cài đặt và dễ hiểu.</li>
+        <li>Có thể trở thành thuật toán <b>ổn định (Stable Sort)</b> nếu được cài đặt đúng cách.</li>
+        <li>Thường được sử dụng làm nền tảng cho các thuật toán như <b>Radix Sort</b>.</li>
+      </ul>
+      <h2>Nhược điểm</h2>
+      <p>Mặc dù rất nhanh, Counting Sort không phải lúc nào cũng là lựa chọn tốt. Thuật toán 
+        chỉ hoạt động hiệu quả khi phạm vi giá trị của dữ liệu không quá lớn.</p>
+      <p><b><u>Ví dụ:</u></b></p>
+      <p>▼ Nếu cần sắp xếp:</p>
+      <div class="note">
+        2 5 7 1 4
+      </div>
+      <p>thì việc tạo mảng đếm rất đơn giản.</p>
+      <p>▼ Nhưng nếu mảng chỉ có vài phần tử như:</p>
+      <div class="note">
+        5<br>
+        1 000 000<br>
+        999 999
+      </div>
+      <p>thì phải tạo mảng đếm có tới hơn một triệu phần tử. Điều này gây lãng phí rất nhiều 
+        bộ nhớ và khiến thuật toán không còn hiệu quả.</p>
+      <p>Ngoài ra, Counting Sort chủ yếu áp dụng cho dữ liệu là <b>số nguyên</b> hoặc các dữ liệu 
+        có thể ánh xạ thành số nguyên trong một phạm vi xác định. Thuật toán không thể sử dụng 
+        trực tiếp để sắp xếp chuỗi ký tự, số thực hoặc các đối tượng phức tạp.</p>
     </div>
     ...
   </div>
