@@ -546,6 +546,111 @@
         giúp nắm vững một thuật toán sắp xếp hiệu quả mà còn tạo nền tảng để học các kỹ thuật
         chia để trị và nhiều thuật toán nâng cao khác.</p>
     </div>
+    <div class="card">
+      <h2 id="p6">6. Giới hạn của các thuật toán sắp xếp (Sorting Lower Bound)</h2>
+      <p>Sau khi tìm hiểu Merge Sort, có thể nhiều người sẽ đặt ra câu hỏi: <b>Liệu có tồn tại
+        một thuật toán sắp xếp dựa trên phép so sánh nhanh hơn O(n log n) hay không?</b></p>
+      <ul>
+        <li><p>Đây là một câu hỏi rất quan trọng trong khoa học máy tính. Trải qua nhiều năm 
+          nghiên cứu, các nhà khoa học đã chứng minh rằng đối với những thuật toán sắp xếp <b>dựa 
+            trên việc so sánh các phần tử với nhau</b>, không thể tồn tại một thuật toán nào có 
+          độ phức tạp tốt hơn <b>O(n log n)</b> trong trường hợp tổng quát. Kết quả này được gọi là 
+          <b>giới hạn dưới của bài toán sắp xếp</b> (Sorting Lower Bound).</p></li>
+        <li><p>Nói cách khác, nếu một thuật toán chỉ sử dụng các phép so sánh như "lớn hơn", 
+          "nhỏ hơn" hoặc "bằng nhau" để xác định thứ tự giữa các phần tử, thì dù được thiết kế 
+          thông minh đến đâu, nó vẫn không thể vượt qua giới hạn này trong trường hợp xấu nhất.</p></li>
+      </ul>
+      <h3>🔹 Thuật toán sắp xếp dựa trên phép so sánh là gì?</h3>
+      <p>Phần lớn các thuật toán sắp xếp quen thuộc đều hoạt động bằng cách liên tục so sánh 
+        các phần tử với nhau.</p>
+      <p><b><u>Ví dụ</u></b>:</p>
+      <ul>
+        <li>Bubble Sort so sánh hai phần tử liền kề để quyết định có cần đổi chỗ hay không.</li>
+        <li>Selection Sort liên tục tìm phần tử nhỏ nhất thông qua các phép so sánh.</li>
+        <li>Insertion Sort so sánh phần tử hiện tại với các phần tử đứng trước.</li>
+        <li>Merge Sort so sánh các phần tử của hai mảng con khi thực hiện quá trình hợp nhất.</li>
+        <li>Quick Sort so sánh các phần tử với phần tử chốt (pivot) để chia mảng.</li>
+      </ul>
+      <p>Điểm chung của các thuật toán này là mọi quyết định đều dựa trên kết quả của các phép
+        so sánh. Chính vì vậy, chúng đều chịu sự ràng buộc bởi giới hạn O(n log n).</p>
+      <h3>🔹 Vì sao lại tồn tại giới hạn này?</h3>
+      <p>Để hiểu điều này, hãy xét một ví dụ đơn giản.</p>
+      <p>▼ Giả sử ta có 3 số:</p>
+      <div class="note">
+        1 2 3
+      </div>
+      <p>▼ Ba số này có thể được sắp xếp theo:</p>
+      <div class="note">
+        3! = 6
+      </div>
+      <p>thứ tự khác nhau.</p>
+      <p>▼ Cụ thể là:</p>
+      <div class="note">
+        1 2 3<br>
+        1 3 2<br>
+        2 1 3<br>
+        2 3 1<br>
+        3 1 2<br>
+        3 2 1
+      </div>
+      <ul>
+        <li><p>Thuật toán phải xác định chính xác dữ liệu đầu vào thuộc trường hợp nào trong 
+          6 trường hợp trên.</p></li>
+        <li><p>Mỗi lần thực hiện một phép so sánh, thuật toán chỉ thu được một lượng thông tin
+          hữu hạn. Vì vậy, muốn phân biệt được tất cả các khả năng, thuật toán buộc phải thực hiện 
+          đủ số lượng phép so sánh cần thiết.</p></li>
+      </ul>
+      <p>▼ Khi số phần tử tăng lên n, số cách sắp xếp khác nhau sẽ là:</p>
+      <div class="note">
+        n!
+      </div>
+      <p>▼ Muốn xác định chính xác một trong số n! khả năng đó, thuật toán phải thực hiện
+        ít nhất khoảng:</p>
+      <div class="note">
+        log₂(n!)
+      </div>
+      <p>phép so sánh.</p>
+      <p>▼ Theo công thức xấp xỉ Stirling trong toán học:</p>
+      <div class="note">
+        log₂(n!) ≈ n log₂(n)
+      </div>
+      <p>Điều này chứng minh rằng mọi thuật toán sắp xếp dựa trên phép so sánh đều cần ít nhất 
+        <b>O(n log n)</b> phép so sánh trong trường hợp xấu nhất.</p>
+      <h3>🔹 Cây quyết định (Decision Tree)</h3>
+      <p>Một cách khác để hình dung giới hạn này là sử dụng <b>cây quyết định</b>.</p>
+      <ul>
+        <li><p>Trong cây quyết định, mỗi nút biểu diễn một phép so sánh giữa hai phần tử.</p></li>
+        <li><p>Kết quả của phép so sánh sẽ tạo thành hai nhánh: <b>Đúng  |  Sai</b></p></li>
+        <li><p>Sau nhiều lần so sánh, thuật toán sẽ đi đến một nút lá. Mỗi nút lá tương ứng
+          với 1 cách sắp xếp của dữ liệu.</p></li>
+        <li><p>Vì có tổng cộng <b>n!</b> cách sắp xếp nên cây quyết định phải có ít nhất <b>n!</b> nút lá.</p></li>
+        <li><p>Trong khi đó, chiều cao của cây chính là số phép so sánh lớn nhất mà thuật toán phải thực hiện.</p></li>
+      </ul>
+      <p>▼ Theo lý thuyết cây nhị phân:</p>
+      <div class="note">
+        Số nút lá ≤ 2^h
+      </div>
+      Trong đó<br>
+      <ul>
+        <li><b>h</b> là chiều cao của cây.</li>
+      </ul>
+      <p>▼ Do đó:</p>
+      <div class="note">
+        2^h ≥ n!
+      </div>
+      <p>▼ Lấy logarit cơ số 2 hai vế:</p>
+      <div class="note">
+        h ≥ log₂(n!)
+      </div>
+      <p>Hay:</p>
+      <div class="note">
+        h = Ω(n log n)
+      </div>
+      <p>==&gt; Điều này chứng minh rằng không thể xây dựng một cây quyết định có chiều cao nhỏ hơn
+        O(n log n), đồng nghĩa với việc không thể có thuật toán sắp xếp dựa trên so sánh nào nhanh
+        hơn giới hạn này.</p>
+      ...
+    </div>
     ...
   </div>
   <script src="menu.js" defer></script>
