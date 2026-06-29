@@ -23,13 +23,7 @@
         <a href="#p8">8. Các lớp độ phức tạp phổ biến</a>
         <a href="#p9">9. Thuật toán đa thức</a>
         <a href="#p10">10. Ước lượng hiệu năng thuật toán</a>
-        <details>
-            <summary>11. Bài toán Maximum Subarray Sum</summary>
-            <a href="#p11">Giới thiệu bài toán</a>
-            <a href="#p11.1">11.1. Brute Force</a>
-            <a href="#p11.2">11.2. Tối ưu 1 vòng</a>
-            <a href="#p11.3">11.3. Thuật toán Kadane</a>
-        </details> 
+        <a href="#p11">11. Bài toán Maximum Subarray Sum</a>
         <a href="#p12">12. So sánh hiệu năng</a>
         <a href="#p13">Tổng kết</a>
     </nav>
@@ -281,7 +275,7 @@
                 <p><b>Ban đầu ta sẽ xây dựng một lời giải đơn giản, sau đó từng bước tối ưu.</b></p>
         </div>
         <div class="card">
-            <h2 id="p11.1">11.1. Thuật toán 1 - Brute Force</h2>
+            <h2>11.1. Thuật toán 1 - Brute Force</h2>
             <ul>
                 <li><p>Cách đơn giản nhất là duyệt toàn bộ các đoạn con có thể.</p></li>
                 <li><p>Với mỗi đoạn con, ta tính tổng rồi cập nhật kết quả lớn nhất.</p></li>
@@ -298,7 +292,7 @@
             </ul>
         </div>
         <div class="card">
-            <h2 id="p11.2">11.2. Thuật toán 2 - Tối ưu một vòng lặp</h2>
+            <h2>11.2. Thuật toán 2 - Tối ưu một vòng lặp</h2>
             <ul>
                 <li><p>Quan sát rằng khi mở rộng đoạn con sang phải, ta không cần tính lại tổng từ đầu.</p></li>
                 <li><p>Chỉ cần cộng thêm phần tử mới vào tổng hiện tại.</p></li>
@@ -314,7 +308,7 @@
             <p><b>Đây là cải tiến đáng kể so với O(n³).</b></p>
         </div>
         <div class="card">
-            <h2 id="p11.3">11.3. Thuật toán Kadane - O(n)</h2>
+            <h2>11.3. Thuật toán Kadane - O(n)</h2>
             <p>Điều bất ngờ là bài toán này có thể giải chỉ bằng <b>một lần</b>  duyệt mảng.</p>
             <p><u>Ý tưởng</u>: Tại mỗi vị trí, lưu tổng lớn nhất của đoạn con kết thúc tại vị trí đó.</p>
             <div class="note"><pre>int best=0;
