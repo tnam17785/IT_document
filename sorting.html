@@ -49,7 +49,7 @@
         thông thường, các thuật toán sắp xếp còn đóng vai trò cực kỳ quan trọng trong lập trình 
         thi đấu và thiết kế thuật toán.</p>
       </ul></li>
-      <h2>Vì sao phải sắp xếp?</h2>
+      <h2>1.1. Vì sao phải sắp xếp?</h2>
       <p>Nhiều bài toán tưởng như không liên quan đến sắp xếp nhưng lại được giải quyết nhanh hơn 
         nhiều nếu dữ liệu đã được sắp xếp trước.</p>
       <p><b><u>Ví dụ</u>:</b></p>
@@ -73,7 +73,7 @@
         <p>Lúc này chỉ cần duyệt một lần và kiểm tra hai phần tử đứng cạnh nhau là đủ.</p>
         <p>==&gt; Có thể thấy, đôi khi dành thời gian để sắp xếp sẽ giúp <b>giảm đáng kể</b> thời gian xử lý
           của toàn bộ chương trình.</p>
-      <h2>Bài toán sắp xếp</h2>
+      <h2>1.2. Bài toán sắp xếp</h2>
       <p>Bài toán sắp xếp cơ bản được phát biểu như sau:</p>
       <div class="note">
         Cho một dãy gồm n phần tử. Hãy sắp xếp các phần tử theo thứ tự tăng dần.
@@ -88,7 +88,7 @@
           1 2 2 3 5 6 8 9
         </div>
       <p>Nghe có vẻ đơn giản, nhưng để thực hiện nhanh với hàng triệu phần tử lại là một vấn đề hoàn toàn khác.</p>
-      <h2>Độ phức tạp của thuật toán sắp xếp</h2>
+      <h2>1.3. Độ phức tạp của thuật toán sắp xếp</h2>
       <p>Có rất nhiều thuật toán sắp xếp khác nhau.</p>
         <ul>
           <li>Một số thuật toán rất đơn giản nên dễ học và dễ cài đặt, nhưng chạy chậm.</li>
@@ -689,7 +689,7 @@
         cao hơn. Đây cũng sẽ là nội dung được trình bày trong mục tiếp theo của chương.</p>
     </div>
     <div class="card">
-      <h2 id="p7">Counting Sort</h2>
+      <h2 id="p7">7. Counting Sort</h2>
       <ul>
         <li><p>Trong các mục trước, chúng ta đã tìm hiểu các thuật toán sắp xếp dựa trên phép 
           so sánh như Bubble Sort và Merge Sort. Những thuật toán này đều phải so sánh các 
@@ -702,7 +702,7 @@
           kết quả đếm được. Nhờ đó, trong những trường hợp phù hợp, thuật toán này có thể đạt 
           độ phức tạp O(n), nhanh hơn các thuật toán O(n log n).</p></li>
       </ul>
-      <h2>Ý tưởng của Counting Sort</h2>
+      <h2>7.1. Ý tưởng của Counting Sort</h2>
       <p>▼ Giả sử ta có dãy số sau:</p>
       <div class="note">
         4 2 7 2 1 5 4 3 2
@@ -753,7 +753,7 @@
         1 2 2 2 3 4 4 5 7
       </div>
       <p>Có thể thấy toàn bộ quá trình không hề cần so sánh giữa các phần tử.</p>
-      <h2>Các bước thực hiện</h2>
+      <h2>7.2. Các bước thực hiện</h2>
       <p>Counting Sort thường được thực hiện theo ba bước chính.</p>
       <h3>🔹 Bước 1: Tạo mảng đếm</h3>
       <p>Đầu tiên, tạo một mảng để lưu số lần xuất hiện của từng giá trị. Ban đầu tất cả 
@@ -788,7 +788,7 @@
         <li>...</li>
       </ul>
       <p>Sau khi hoàn thành, mảng đã được sắp xếp.</p>
-      <h2>Ví dụ minh họa</h2>
+      <h2>7.3. Ví dụ minh họa</h2>
       <p>▼ Cho mảng:</p>
       <div class="note">
         3 1 4 1 2 5 3 2
@@ -828,7 +828,7 @@
       </div>
       <p>Quá trình này chỉ cần duyệt qua dữ liệu và bảng đếm, không phải thực hiện các phép 
         đổi chỗ như Bubble Sort hay Merge Sort.</p>
-      <h2>Độ phức tạp</h2>
+      <h2>7.4. Độ phức tạp</h2>
       <p>▼ Giả sử:</p>
       <ul>
         <li><b>n</b> là số lượng phần tử.</li>
@@ -847,7 +847,7 @@
       <p>Nếu <b>k</b> không quá lớn so với <b>n</b>, ta có thể xem thuật toán gần như chạy trong 
         thời gian <b>O(n)</b>.</p>
       <p>Đây là một tốc độ rất cao và là ưu điểm lớn nhất của Counting Sort.</p>
-      <h2>Ưu điểm</h2>
+      <h2>7.5. Ưu điểm</h2>
       <p>Counting Sort có nhiều ưu điểm nổi bật:</p>
       <ul>
         <li>Độ phức tạp thời gian rất thấp khi dữ liệu phù hợp.</li>
@@ -856,7 +856,7 @@
         <li>Có thể trở thành thuật toán <b>ổn định (Stable Sort)</b> nếu được cài đặt đúng cách.</li>
         <li>Thường được sử dụng làm nền tảng cho các thuật toán như <b>Radix Sort</b>.</li>
       </ul>
-      <h2>Nhược điểm</h2>
+      <h2>7.6. Nhược điểm</h2>
       <p>Mặc dù rất nhanh, Counting Sort không phải lúc nào cũng là lựa chọn tốt. Thuật toán 
         chỉ hoạt động hiệu quả khi phạm vi giá trị của dữ liệu không quá lớn.</p>
       <p><b><u>Ví dụ:</u></b></p>
@@ -876,7 +876,71 @@
       <p>Ngoài ra, Counting Sort chủ yếu áp dụng cho dữ liệu là <b>số nguyên</b> hoặc các dữ liệu 
         có thể ánh xạ thành số nguyên trong một phạm vi xác định. Thuật toán không thể sử dụng 
         trực tiếp để sắp xếp chuỗi ký tự, số thực hoặc các đối tượng phức tạp.</p>
+      <h2>7.7. Khi nào nên sử dụng Counting Sort?</h2>
+      <p>Counting Sort đặc biệt phù hợp trong các trường hợp sau:</p>
+      <ul>
+        <li>Sắp xếp điểm thi của học sinh (ví dụ từ 0 đến 100).</li>
+        <li>Sắp xếp tuổi của một nhóm người.</li>
+        <li>Sắp xếp điểm số trong trò chơi.</li>
+        <li>Sắp xếp dữ liệu có giá trị nhỏ và biết trước phạm vi.</li>
+      </ul>
     </div>
+    <p>==&gt; Trong những bài toán như vậy, Counting Sort thường nhanh hơn đáng kể so với 
+      Merge Sort hoặc Quick Sort.</p>
+    <p>Ngược lại, nếu dữ liệu có phạm vi rất lớn hoặc không phải là số nguyên, các thuật toán 
+      sắp xếp dựa trên phép so sánh sẽ là lựa chọn phù hợp hơn.</p>
+    <h2>7.8. So sánh với Merge Sort</h2>
+    <div class="table-wrapper">
+      <table class="table">
+        <tr>
+          <th>Tiêu chí</th>
+          <th>Counting Sort</th>
+          <th>Merge Sort</th>
+        </tr>
+        <tr>
+          <td>Nguyên lý</td>
+          <td>Đếm số lần xuất hiện</td>
+          <td>Chia để trị</td>
+        </tr>
+        <tr>
+          <td>Dựa trên phép so sánh</td>
+          <td>Không</td>
+          <td>Có</td>
+        </tr>
+        <tr>
+          <td>Độ phức tạp</td>
+          <td>O(n + k)</td>
+          <td>O(n log n)</td>
+        </tr>
+        <tr>
+          <td>Bộ nhớ phụ</td>
+          <td>O(k)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>Áp dụng cho mọi kiểu dữ liệu</td>
+          <td>Không</td>
+          <td>Có</td>
+        </tr>
+        <tr>
+          <td>Phù hợp với dữ liệu lớn</td>
+          <td>Chỉ khi phạm vi giá trị nhỏ</td>
+          <td>Có</td>
+        </tr>
+      </table>
+    </div>
+    <h2>7.9. Kết luận</h2>
+    <ul>
+    <li><p>Counting Sort là một thuật toán sắp xếp đặc biệt vì không dựa trên phép so sánh giữa 
+      các phần tử. Thay vào đó, thuật toán tận dụng thông tin về phạm vi giá trị để đếm số lần 
+      xuất hiện của từng phần tử và xây dựng lại mảng theo đúng thứ tự. Nhờ đó, trong những 
+      trường hợp phù hợp, Counting Sort có thể đạt độ phức tạp gần O(n), nhanh hơn các thuật 
+      toán O(n log n).</p></li>
+    <li><p>Tuy nhiên, hiệu quả của Counting Sort phụ thuộc rất nhiều vào phạm vi giá trị của dữ liệu. 
+      Nếu khoảng giá trị quá lớn hoặc dữ liệu không phải số nguyên, việc sử dụng thuật toán này sẽ 
+      không còn hợp lý. Vì vậy, người lập trình cần lựa chọn thuật toán sắp xếp phù hợp với từng 
+      bài toán cụ thể để đạt được hiệu năng tốt nhất.</p></li>
+    </ul>
     ...
   </div>
   <script src="menu.js" defer></script>
